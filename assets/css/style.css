@@ -4,11 +4,16 @@
   --light-blue: #59abe3;
   --green: #6fc381;
   --dark-green: #5ea26d;
+  --light-gray: #f5f8fd;
   --shadow: #0000002d;
   --animate-delay: 1s;
 }
 body {
   font-family: "Open Sans", sans-serif;
+}
+a {
+  color: var(--light-blue);
+  transition: 0.5s;
 }
 h1 {
   color: var(--blue);
@@ -40,6 +45,9 @@ h4 {
 
 .container {
   max-width: 80vw;
+}
+.bg-gray {
+  background: var(--light-gray);
 }
 
 /* Navbar */
@@ -125,9 +133,6 @@ h4 {
 .history-img img:hover {
   transform: scale(1.03);
 }
-.bg-gray {
-  background: #f5f8fd;
-}
 .box {
   padding: 30px;
   position: relative;
@@ -152,4 +157,14 @@ h4 {
 }
 .icon i {
   font-size: 30px;
+}
+
+/* Rush  */
+.accordion-item {
+  border: none;
+  border-bottom: solid;
+}
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: var(--light-gray);
 }
