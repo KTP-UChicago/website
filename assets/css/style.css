@@ -53,6 +53,7 @@ h4 {
 /* Navbar */
 .navbar {
   min-height: 70px;
+  background-color: white;
 }
 .navbar .nav-link,
 .navbar .dropdown-item {
@@ -162,7 +163,6 @@ h4 {
 /* Rush  */
 .accordion-item {
   border: none;
-  border-bottom: solid;
 }
 .accordion-button:not(.collapsed) {
   color: black;
