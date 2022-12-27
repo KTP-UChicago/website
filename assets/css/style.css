@@ -5,6 +5,7 @@
   --green: #6fc381;
   --dark-green: #5ea26d;
   --shadow: #0000002d;
+  --animate-delay: 1s;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -12,17 +13,22 @@ body {
 h1 {
   color: var(--blue);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 h2 {
   color: var(--blue);
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
 }
 h3 {
   color: black;
   font-weight: 400;
   font-size: 1.75rem;
+}
+h4 {
+  color: black;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 /* Sizes
   xs: 0,
@@ -31,6 +37,10 @@ h3 {
   lg: 992px,
   xl: 1200px,
   xxl: 1400px */
+
+.container {
+  max-width: 80vw;
+}
 
 /* Navbar */
 .navbar {
@@ -90,9 +100,6 @@ h3 {
     background-position: top;
     background-repeat: no-repeat;
   }
-  .hero-title {
-    font-size: 2.5rem;
-  }
 }
 .btn-rush {
   font-weight: 600;
@@ -107,4 +114,42 @@ h3 {
 .btn-rush:hover {
   color: white;
   background: var(--dark-green);
+}
+
+/* About */
+.history-img img {
+  width: 100%;
+  border: 8px solid #edf0f4;
+  transition: 0.5s;
+}
+.history-img img:hover {
+  transform: scale(1.03);
+}
+.bg-gray {
+  background: #f5f8fd;
+}
+.box {
+  padding: 30px;
+  position: relative;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: white;
+  box-shadow: 0 10px 30px 0 rgba(68, 88, 144, 0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+.box:hover {
+  transform: scale(1.05);
+}
+.icon {
+  margin: 0 auto 15px auto;
+  padding-top: 15px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.icon i {
+  font-size: 30px;
 }
