@@ -69,6 +69,18 @@ h3 {
   }
 }
 
+/* Footer */
+.footer {
+  bottom: 0;
+  color: var(--dark-blue);
+}
+.social-media {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--dark-blue);
+  transition: 0.5s;
+}
+
 /* Index */
 @media (min-width: 992px) {
   .hero {
