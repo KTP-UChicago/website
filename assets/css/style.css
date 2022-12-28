@@ -213,13 +213,12 @@ h4 {
 .active-item:hover .overlay {
   opacity: 0.8;
 }
-#actives i {
+.fa-linkedin {
   color: white;
   position: absolute;
   bottom: 20%;
   left: 50%;
   transform: translate(-50%, -30%);
-  -ms-transform: translate(-50%, -30%);
   text-align: center;
   font-size: 2.5vw;
 }
@@ -230,8 +229,6 @@ h4 {
   position: absolute;
   top: 40%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -239,7 +236,7 @@ h4 {
   .text {
     font-size: 12px;
   }
-  #actives i {
+  .fa-linkedin {
     font-size: 24px;
   }
 }
