@@ -180,32 +180,12 @@ h4 {
 .member-img {
   width: 100%;
 }
-.active-img figure {
-  position: relative;
-}
-.member-img {
-  position: relative;
-}
-.active-item {
-  width: 20%;
-  padding: 0.5rem;
-}
-.active-img figure img {
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-}
-.active-img figure figcaption {
-  text-align: center;
-}
 .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: auto;
   opacity: 0;
   transition: 0.3s ease;
   background-color: var(--dark-blue);
