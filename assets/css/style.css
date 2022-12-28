@@ -186,10 +186,6 @@ h4 {
 .member-img {
   position: relative;
 }
-.active-item {
-  /* width: 100%; */
-  padding: 0.5rem;
-}
 .active-img figure img {
   width: 100%;
 }
@@ -200,12 +196,11 @@ h4 {
   left: 0;
   right: 0;
   width: 100%;
-  height: auto;
   opacity: 0;
   transition: 0.3s ease;
   background-color: var(--dark-blue);
 }
-.active-item:hover .overlay {
+.active-img:hover .overlay {
   opacity: 0.8;
 }
 .fa-linkedin::before {
