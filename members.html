@@ -160,11 +160,6 @@
             var rows = csv.split("\n");
             for (var i = 1; i < rows.length - 1; i++) {
               cols = rows[i].split(",");
-              //   if (i % 5 == 1)
-              //     document.getElementById("memberContainer").innerHTML +=
-              //       '<div class="row" id="memberRow">';
-              //   if (i % 5 == 0) document.getElementById("memberContainer").innerHTML += "</div>";
-
               var memberName = cols[0] + " " + cols[1];
               var memberImage = "assets/img/members/" + cols[2];
               var memberPledgeClass = cols[3];
