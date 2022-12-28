@@ -227,5 +227,5 @@ h4 {
   }
 }
 #carousel {
-  height: auto;
+  height: auto !important;
 }
