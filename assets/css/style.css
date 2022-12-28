@@ -6,7 +6,6 @@
   --dark-green: #5ea26d;
   --light-gray: #f5f8fd;
   --shadow: #0000002d;
-  --animate-delay: 1s;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -43,9 +42,6 @@ h4 {
   xl: 1200px,
   xxl: 1400px */
 
-.container {
-  max-width: 80vw;
-}
 .bg-gray {
   background: var(--light-gray);
 }
