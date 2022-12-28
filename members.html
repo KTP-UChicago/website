@@ -171,7 +171,7 @@
               var memberLinkedIn = cols[5];
 
               document.getElementById("memberRow").innerHTML +=
-                '<div class="active-item col-4 col-sm-3 col-md-2"> <div class="member-img"> <img src=' +
+                '<div class="active-item col-4 col-sm-3 col-md-2"> <div class="active-img"> <figure> <div class="member-img"> <img src=' +
                 memberImage +
                 ' onerror="this.onerror=null; this.src=\'assets/img/members/Filler.jpg\'"> <div class="overlay"> <a href= "' +
                 memberLinkedIn +
@@ -181,9 +181,9 @@
                 memberPledgeClass +
                 "; | " +
                 memberGradYear +
-                "</div> </div>" +
+                "</div> </div> </div> <figcaption> " +
                 memberName +
-                "</div> </div>";
+                "</figcaption> </figure> </div> </div>";
             }
           </script>
         </div>
