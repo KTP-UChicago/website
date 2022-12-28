@@ -159,10 +159,10 @@
             var rows = csv.split("\n");
             for (var i = 1; i < rows.length - 1; i++) {
               cols = rows[i].split(",");
-              if (i % 5 == 1)
-                document.getElementById("memberContainer").innerHTML +=
-                  '<div class="row" id="memberRow">';
-              if (i % 5 == 0) document.getElementById("memberContainer").innerHTML += "</div>";
+              //   if (i % 5 == 1)
+              //     document.getElementById("memberContainer").innerHTML +=
+              //       '<div class="row" id="memberRow">';
+              //   if (i % 5 == 0) document.getElementById("memberContainer").innerHTML += "</div>";
 
               var memberName = cols[0] + " " + cols[1];
               var memberImage = "assets/img/members/" + cols[2];
@@ -170,7 +170,7 @@
               var memberGradYear = cols[4];
               var memberLinkedIn = cols[5];
 
-              document.getElementById("memberRow").innerHTML +=
+              document.getElementById("memberContainer").innerHTML +=
                 '<div class="active-item col-4 col-sm-3 col-md-2"> <div class="active-img"> <figure> <div class="member-img"> <img src=' +
                 memberImage +
                 ' onerror="this.onerror=null; this.src=\'assets/img/members/Filler.jpg\'"> <div class="overlay"> <a href= "' +
@@ -181,7 +181,7 @@
                 memberPledgeClass +
                 "; | " +
                 memberGradYear +
-                "</div> </div> </div> <figcaption> " +
+                '</div> </div> </div> <figcaption class="text-center">' +
                 memberName +
                 "</figcaption> </figure> </div> </div>";
             }
