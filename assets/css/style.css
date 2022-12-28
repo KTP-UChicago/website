@@ -177,17 +177,13 @@ h4 {
 .eboard-name {
   font-size: 1.3rem;
 }
+.active-img figure img,
 .member-img {
   width: 100%;
 }
-.active-img figure {
-  position: relative;
-}
+.active-img figure,
 .member-img {
   position: relative;
-}
-.active-img figure img {
-  width: 100%;
 }
 .overlay {
   position: absolute;
@@ -206,7 +202,7 @@ h4 {
 .fa-linkedin::before {
   color: white;
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   left: 50%;
   transform: translate(-50%, -30%);
   text-align: center;
@@ -223,9 +219,7 @@ h4 {
   text-align: center;
 }
 @media (max-width: 800px) {
-  .text {
-    font-size: 12px;
-  }
+  .text,
   .fa-linkedin::before {
     font-size: 12px;
   }
