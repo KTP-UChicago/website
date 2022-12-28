@@ -37,6 +37,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/lightslider.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/lightslider.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#lightSlider").lightSlider();
+      });
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg shadow-lg sticky-top">
@@ -186,6 +195,85 @@
       </div>
     </div>
 
+    <div class="container py-5">
+      <div class="scroll" id="alumni">
+        <div class="row">
+          <h2 class="text-center mb-4">Alumni</h2>
+          <p>
+            Kappa Theta Pi has an extensive alumni network working at companies across the country.
+            We are proud to support our esteemed alumni and thank them for their continuing, and
+            lifelong, contributions to the KTP community.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <ul id="lightSlider">
+        <li>
+          <h3>First Slide</h3>
+          <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
+        </li>
+        <li>
+          <h3>Second Slide</h3>
+          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+        </li>
+      </ul>
+
+      <!-- <div class="carousel slide" data-ride="carousel">
+        <div class="row justify-content-center">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="col-md-2">
+                <img class="img-fluid" src="assets/img/companies/amazon.png" alt="" />
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <img class="img-fluid" src="assets/img/companies/becker.png" alt="" />
+              </div>
+            </div>
+
+            <img src="assets/img/companies/google.png" alt="" />
+            <img src="assets/img/companies/apple.png" alt="" />
+            <img src="assets/img/companies/janestreet.png" alt="" />
+            <img src="assets/img/companies/jnj.png" alt="" />
+            <img src="assets/img/companies/jpmorgan.png" alt="" />
+            <img src="assets/img/companies/justicetext.png" alt="" />
+            <img src="assets/img/companies/blackstone.png" alt="" />
+            <img src="assets/img/companies/microsoft.png" alt="" />
+            <img src="assets/img/companies/nextdoor.png" alt="" />
+            <img src="assets/img/companies/pwc.png" alt="" />
+            <img src="assets/img/companies/stripe.png" alt="" />
+            <img src="assets/img/companies/codeyourdreams.png" alt="" />
+            <img src="assets/img/companies/compileher.png" alt="" />
+            <img src="assets/img/companies/creditsuisse.png" alt="" />
+            <img src="assets/img/companies/dell.png" alt="" />
+            <img src="assets/img/companies/doordash.png" alt="" />
+            <img src="assets/img/companies/meta.png" alt="" />
+            <img src="assets/img/companies/weallcode.png" alt="" />
+            <img src="assets/img/companies/tesla.png" alt="" />
+            <img src="assets/img/companies/verizon.png" alt="" />
+          </div>
+          <script>
+            let items = document.querySelectorAll(".carousel .carousel-item");
+
+            items.forEach((el) => {
+              const minPerSlide = 6;
+              let next = el.nextElementSibling;
+              for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                  next = items[0];
+                }
+                let cloneChild = next.cloneNode(true);
+                el.appendChild(cloneChild.children[0]);
+                next = next.nextElementSibling;
+              }
+            });
+          </script>
+        </div> -->
+      <!-- </div> -->
+    </div>
+
     <div class="container-fluid text-center py-5 footer">
       <p>2023 KTP Theta Chapter. Website by KTP Alpha Chapter.</p>
       <div class="social-media">
@@ -208,6 +296,7 @@
     </div>
 
     <!-- JS -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
