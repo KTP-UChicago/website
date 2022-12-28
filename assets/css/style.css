@@ -221,6 +221,6 @@ h4 {
 @media (max-width: 800px) {
   .text,
   .fa-linkedin::before {
-    font-size: 12px;
+    font-size: 24px;
   }
 }
