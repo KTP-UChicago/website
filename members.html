@@ -143,6 +143,32 @@
       <div class="container py-5" id="memberContainer">
         <div class="scroll" id="actives">
           <h2 class="text-center mb-4">Active Members</h2>
+          <div class="row" id="memberRow">
+            <div class="active-item col-4 col-sm-3 col-md-2">
+              <div class="active-img">
+                <figure>
+                  <div class="member-img">
+                    <img
+                      src="assets/img/members/Emilio_Andere.jpg"
+                      onerror="this.onerror=null; this.src='assets/img/members/Filler.jpg'"
+                    />
+                    <div class="overlay">
+                      <a
+                        href="https://www.linkedin.com/in/emi-andere/"
+                        class="icon"
+                        title="LinkedIn"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-linkedin"></i>
+                      </a>
+                      <div title=" Beta " class="text">Β | 2025</div>
+                    </div>
+                  </div>
+                  <figcaption>Emilio Andere</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
           <script>
             function loadFile(filePath) {
               var result = null;
@@ -170,7 +196,7 @@
               var memberGradYear = cols[4];
               var memberLinkedIn = cols[5];
 
-              document.getElementById("memberContainer").innerHTML +=
+              document.getElementById("memberRow").innerHTML +=
                 '<div class="active-item col-4 col-sm-3 col-md-2"> <div class="active-img"> <figure> <div class="member-img"> <img src=' +
                 memberImage +
                 ' onerror="this.onerror=null; this.src=\'assets/img/members/Filler.jpg\'"> <div class="overlay"> <a href= "' +
