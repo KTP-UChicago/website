@@ -172,3 +172,74 @@ h4 {
   color: black;
   background-color: var(--light-gray);
 }
+
+/* Members */
+.eboard-name {
+  font-size: 1.3rem;
+}
+.member-img {
+  width: 100%;
+}
+.active-img figure {
+  position: relative;
+}
+.member-img {
+  position: relative;
+}
+.active-item {
+  width: 20%;
+  padding: 0.5rem;
+}
+.active-img figure img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.active-img figure figcaption {
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: var(--dark-blue);
+}
+.active-item:hover .overlay {
+  opacity: 0.8;
+}
+ion-icon {
+  color: white;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  text-align: center;
+  font-size: 2.5vw;
+}
+.text {
+  font-family: var(--font-body);
+  color: white;
+  font-size: 1.2vw;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 12px;
+  }
+  ion-icon {
+    font-size: 24px;
+  }
+}

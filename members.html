@@ -81,6 +81,115 @@
       </div>
     </nav>
 
+    <div class="container py-5">
+      <div class="scroll" id="eboard">
+        <h2 class="text-center mb-5">Executive Board</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Pratham_Gandhi.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Pratham Gandhi</h2>
+            <p>President</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Minjoo_Song.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Minjoo Song</h2>
+            <p>Vice President</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Iris_Hwang.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Iris Hwang</h2>
+            <p>Director of Engagement</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img
+              class="w-100 mb-2"
+              src="assets/img/members/Gregorio_Florentino_Sanchez.jpg"
+              alt=""
+            />
+            <h2 class="eboard-name mb-0">Gregorio Florentino Sanchez</h2>
+            <p>Director of Finance</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Filler.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Zelia Mauro</h2>
+            <p>Director of Marketing</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Kyle_Wong.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Kyle Wong</h2>
+            <p>Director of Membership</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Joshua_Ahn.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Joshua Ahn</h2>
+            <p>Director of Outreach</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Katherine_Sun.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Katie Sun</h2>
+            <p>Director of Professional Development</p>
+          </div>
+          <div class="col-4 col-lg-2 px-lg-3 text-center">
+            <img class="w-100 mb-2" src="assets/img/members/Rohan_Deme.jpg" alt="" />
+            <h2 class="eboard-name mb-0">Rohan Deme</h2>
+            <p>Director of Technology</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray">
+      <div class="container py-5">
+        <div class="scroll" id="actives">
+          <h2 class="text-center mb-4">Active Members</h2>
+          <script>
+            function loadFile(filePath) {
+              var result = null;
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.open("GET", filePath, false);
+              xmlhttp.send();
+              if (xmlhttp.status == 200) {
+                result = xmlhttp.responseText;
+              }
+              return result;
+            }
+
+            var csv = loadFile("assets/memberList.csv");
+            var rows = csv.split("\n");
+            for (var i = 1; i < rows.length - 1; i++) {
+              cols = rows[i].split(",");
+              if (i % 5 == 1)
+                document.getElementById("memberContainer").innerHTML +=
+                  '<div class="row" id="memberRow">';
+              if (i % 5 == 0) document.getElementById("memberContainer").innerHTML += "</div>";
+
+              var memberName = cols[0] + " " + cols[1];
+              var memberImage = "assets/img/members/" + cols[2];
+              var memberPledgeClass = cols[3];
+              var memberGradYear = cols[4];
+              var memberLinkedIn = cols[5];
+
+              document.getElementById("memberRow").innerHTML +=
+                '<div class="active-item col-4 col-sm-3 col-md-2"> <div class="active-img"> <figure> <div class="member-img"> <img src=' +
+                memberImage +
+                ' onerror="this.onerror=null; this.src=\'assets/img/members/Filler.jpg\'"> <div class="overlay"> <a href= "' +
+                memberLinkedIn +
+                '"class="icon" title="LinkedIn" target="_blank"> <ion-icon name="logo-linkedin"></ion-icon> </a> <div title=" ' +
+                memberPledgeClass +
+                ' " class="text">&' +
+                memberPledgeClass +
+                "; | " +
+                memberGradYear +
+                "</div> </div> </div> <figcaption> " +
+                memberName +
+                "</figcaption> </figure> </div> </div>";
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid text-center py-5 footer">
       <p>2023 KTP Theta Chapter. Website by KTP Alpha Chapter.</p>
       <div class="social-media">
