@@ -83,6 +83,7 @@
   background: white;
   border-radius: 0.25rem;
   padding: 1.25rem;
+  box-shadow: 0 10px 30px 0 rgba(68, 88, 144, 0.1);
 }
 .cd-timeline__content::before {
   display: none;

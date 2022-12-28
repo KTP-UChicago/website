@@ -13,6 +13,7 @@ body {
 a {
   color: var(--light-blue);
   transition: 0.5s;
+  text-decoration: none !important;
 }
 h1 {
   color: var(--blue);
@@ -34,14 +35,6 @@ h4 {
   font-weight: 600;
   font-size: 1.3rem;
 }
-/* Sizes
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px */
-
 .bg-gray {
   background: var(--light-gray);
 }
@@ -95,7 +88,6 @@ h4 {
 }
 .social-media {
   font-size: 1.3rem;
-  text-decoration: none;
   color: var(--dark-blue);
   transition: 0.5s;
 }
@@ -112,7 +104,6 @@ h4 {
 }
 .btn-rush {
   font-weight: 600;
-  text-decoration: none;
   letter-spacing: 1px;
   padding: 10px 32px;
   border-radius: 4px;
