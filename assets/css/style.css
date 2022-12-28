@@ -213,7 +213,7 @@ h4 {
 .active-item:hover .overlay {
   opacity: 0.8;
 }
-ion-icon {
+#actives i {
   color: white;
   position: absolute;
   bottom: 20%;
@@ -239,7 +239,7 @@ ion-icon {
   .text {
     font-size: 12px;
   }
-  ion-icon {
+  #actives i {
     font-size: 24px;
   }
 }
