@@ -297,7 +297,11 @@
     <!-- JS -->
     <script type="text/javascript">
       $(document).ready(function () {
-        $("#carousel").lightSlider();
+        $("#carousel").lightSlider({
+          auto: true,
+          autoWidth: true,
+          loop: true,
+        });
       });
     </script>
     <script
