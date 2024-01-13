@@ -20,7 +20,7 @@ def write_csv():
     member_data_sorted = sort_last_names(member_data)
     member_data_cleaned = clean_data(member_data_sorted)
     with open("../assets/memberList.csv", "w") as f:
-        f.write("First,Last,Headshot,Pledge Class,Grad Year,Linkedin")
+        f.write("First,Last,Headshot,Pledge Class,Grad Year,Linkedin\n")
         for member in member_data_cleaned:
             f.write(member + "\n")
 def main():
