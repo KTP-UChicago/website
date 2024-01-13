@@ -11,7 +11,9 @@ def clean_data(member_data):
     member_data_cleaned = []
     for member in member_data:
         attributes = member.split(",")
-        attributes[2] = attributes[0] + "_" + attributes[1] + ".jpg"
+        attributes[0] = attributes[0].strip()
+        attributes[1] = attributes[1].strip()
+        attributes[2] = attributes[0].replace(" ", "_") + "_" + attributes[1].replace(" ", "_") + ".jpg"
         attributes[5] = attributes[5].replace("MISSING", "")
         member_data_cleaned.append(",".join(attributes))
     return member_data_cleaned
