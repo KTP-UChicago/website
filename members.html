@@ -115,7 +115,7 @@
             <p>Director of Finance</p>
           </div>
           <div class="col-4 col-md-3 col-lg-2 px-lg-3 text-center">
-            <img class="w-100 mb-2"  style="width: 156px; height: 156px; object-fit: cover;" src="assets/img/members/Jessica_Ortiz.jpg" alt="" />
+            <img class="w-100 mb-2" src="assets/img/members/Jessica_Ortiz.jpg" alt="" />
             <h2 class="eboard-name mb-0">Jessica Ortiz</h2>
             <p>Director of Marketing</p>
           </div>
@@ -167,8 +167,14 @@
 
             var csv = loadFile("assets/memberList.csv");
             var rows = csv.split("\n");
-            for (var i = 1; i < rows.length - 1; i++) {
-              cols = rows[i].split(",");
+            rows = rows.slice(1, rows.length - 1);
+            var new_rows = rows.sort(function (row_a, row_b) {
+              var a = row_a.split(",")[1];
+              var b = row_b.split(",")[1];
+              return a.toLowerCase().localeCompare(b.toLowerCase());
+            });
+            for (var i = 1; i < new_rows.length; i++) {
+              cols = new_rows[i].split(",");
               var memberName = cols[0] + " " + cols[1];
               var memberImage = "assets/img/members/" + cols[2];
               var memberPledgeClass = cols[3];
