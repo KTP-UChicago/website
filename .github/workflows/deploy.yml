@@ -23,6 +23,11 @@ jobs:
         cd react-app
         npm install
 
+    - name: Set up Git user
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        
     - name: Build and deploy
       run: |
         cd react-app
