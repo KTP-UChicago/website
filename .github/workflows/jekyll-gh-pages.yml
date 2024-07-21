@@ -42,6 +42,8 @@ jobs:
         run: |
           cd react-app
           npm run build
+        env:
+          CI: false
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
