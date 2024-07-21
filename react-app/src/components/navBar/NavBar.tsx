@@ -14,7 +14,7 @@ function NavBar({page} : {page: string}) {
   return (
     <>
     <ModalBase open={signInOpen} handleClose={() => setSignInOpen(false)}>
-      <h1>Member portal in proress</h1>
+      <h1>Member portal in progress</h1>
       </ModalBase>
     <nav className="navbar navbar-expand-lg shadow-lg sticky-top">
       <div className="container-fluid mx-md-5">
