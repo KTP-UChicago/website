@@ -1,8 +1,10 @@
 import {useState} from 'react';
 import ModalBase from '../core/modalBase/ModalBase';
 import { Link } from 'react-router-dom';
+import { useAuthentication } from '../../contexts/AuthenticationContext';
 
 function NavBar({page} : {page: string}) {
+  const {user, handleLogin, handleLogout} = useAuthentication();
     const returnActiveIfCurrent = (currentPage: string) => {
         return page === currentPage ? "active" : "";
     }
@@ -73,13 +75,27 @@ function NavBar({page} : {page: string}) {
             <li className="nav-item mx-3">
               <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/contact">Contact Us</Link>
             </li>
-            <li className="nav-item mx-3" onClick={() => {setSignInOpen(true)}}
+            {
+              user && <li className="nav-item mx-3">
+              <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/">Alumni Database</Link>
+            </li>
+            }
+            {
+              user ? <li className="nav-item mx-3" onClick={handleLogout}
               style={hoverStyle}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-                <a className="nav-link" >Sign In</a>
+                <a className="nav-link" >Sign Out</a>
             </li>
+            : <li className="nav-item mx-3" onClick={handleLogin}
+            style={hoverStyle}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+              <a className="nav-link" >Sign In</a>
+          </li>
+            }
           </ul>
         </div>
       </div>

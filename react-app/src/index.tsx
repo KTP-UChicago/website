@@ -18,6 +18,8 @@ import WorkshopsPage from './components/pages/workshopsPage/WorkshopsPage';
 import MembersPage from './components/pages/membersPage/MembersPage';
 import ContactPage from './components/pages/contactPage/ContactPage';
 import RedirectToHash from './components/redirectToHash/RedirecToHash';
+import { FirebaseProvider } from './contexts/FirebaseContext';
+import { AuthenticationContextProvider } from './contexts/AuthenticationContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -53,18 +55,23 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <RedirectToHash/>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/about" element={<AboutPage/>} />
-        <Route path="/contact" element={<ContactPage/>} />
-        <Route path="/members" element={<MembersPage/>} />
-        <Route path="/rush" element={<RushPage/>} />
-        <Route path="/workshops" element={<WorkshopsPage/>} />
-        <Route path="*" element={<Navigate to="/" replace />}/>
-        </Routes>
-    </HashRouter>
+    <FirebaseProvider>
+      <AuthenticationContextProvider>
+        <HashRouter>
+        <RedirectToHash/>
+        <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/about" element={<AboutPage/>} />
+          <Route path="/contact" element={<ContactPage/>} />
+          <Route path="/members" element={<MembersPage/>} />
+          <Route path="/rush" element={<RushPage/>} />
+          <Route path="/workshops" element={<WorkshopsPage/>} />
+          <Route path="*" element={<Navigate to="/" replace />}/>
+          </Routes>
+      </HashRouter>
+      </AuthenticationContextProvider>
+    </FirebaseProvider>
+    
     {/* <RouterProvider router={router}/> */}
   </React.StrictMode>
 );
