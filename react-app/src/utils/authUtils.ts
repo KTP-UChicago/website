@@ -29,6 +29,7 @@ const VALID_EMAILS = new Set([
     "siyakalra@uchicago.edu",
     "catherinelu@uchicago.edu",
     "jessicao@uchicago.edu",
+    "aryasap@uchicago.edu"
 ])
 const validateEmail = (email: string): boolean => {
     if(!VALID_EMAILS.has(email)){
