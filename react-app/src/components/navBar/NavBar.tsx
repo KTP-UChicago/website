@@ -77,7 +77,7 @@ function NavBar({page} : {page: string}) {
             </li>
             {
               user && <li className="nav-item mx-3">
-              <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/">Alumni Database</Link>
+              <Link className={`nav-link ${returnActiveIfCurrent("alumni-database")}`} to="/alumni-database">Alumni Database</Link>
             </li>
             }
             {
