@@ -6,6 +6,7 @@ import { LinkedIn } from '@mui/icons-material';
 import { CLASSES } from '../../../constants';
 import ClassDisplay from './ClassDisplay';
 import MemberCard from '../../memberCard/MemberCard';
+import useNavigateToId from '../../../hooks/useNavigateToId/useNavigateToId';
 
 // Define a type for the member data
 export interface Member {
@@ -19,6 +20,7 @@ export interface Member {
 // Component for the eboard and members page
 const MembersPage = () => {
   const [members, setMembers] = useState<Member[]>([]);
+  useNavigateToId();
   useEffect(() => {
     // Function to load CSV data
     const loadFile = async (filePath: string): Promise<string> => {

@@ -9,7 +9,7 @@ import {
   HashRouter,
   Route,
   Routes,
-  RouterProvider,
+  Navigate,
 } from "react-router-dom";
 import HomePage from './components/pages/homePage/HomePage';
 import RushPage from './components/pages/rushPage/RushPage';
@@ -17,6 +17,7 @@ import AboutPage from './components/pages/aboutPage/AboutPage';
 import WorkshopsPage from './components/pages/workshopsPage/WorkshopsPage';
 import MembersPage from './components/pages/membersPage/MembersPage';
 import ContactPage from './components/pages/contactPage/ContactPage';
+import RedirectToHash from './components/redirectToHash/RedirecToHash';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -53,6 +54,7 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <HashRouter>
+      <RedirectToHash/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element={<AboutPage/>} />
@@ -60,13 +62,9 @@ root.render(
         <Route path="/members" element={<MembersPage/>} />
         <Route path="/rush" element={<RushPage/>} />
         <Route path="/workshops" element={<WorkshopsPage/>} />
+        <Route path="*" element={<Navigate to="/" replace />}/>
         </Routes>
     </HashRouter>
     {/* <RouterProvider router={router}/> */}
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

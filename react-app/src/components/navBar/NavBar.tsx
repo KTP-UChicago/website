@@ -56,8 +56,8 @@ function NavBar({page} : {page: string}) {
                 Workshops
               </Link>
               <ul className="dropdown-menu" aria-labelledby="workshopDropdown">
-                <li><Link className="dropdown-item" to="/workshop#rsvp">RSVP</Link></li>
-                <li><Link className="dropdown-item" to="/workshop#events">Events</Link></li>
+                <li><Link className="dropdown-item" to="/workshops#rsvp">RSVP</Link></li>
+                <li><Link className="dropdown-item" to="/workshops#events">Events</Link></li>
               </ul>
             </li>
             <li className="nav-item mx-3 dropdown">
