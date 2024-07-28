@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import ModalBase from '../core/modalBase/ModalBase';
+import { Link } from 'react-router-dom';
 
 function NavBar({page} : {page: string}) {
     const returnActiveIfCurrent = (currentPage: string) => {
@@ -35,7 +36,8 @@ function NavBar({page} : {page: string}) {
               <a className={`nav-link ${returnActiveIfCurrent("home")}`} href="/">Home</a>
             </li>
             <li className="nav-item mx-3">
-              <a className={`nav-link ${returnActiveIfCurrent("about")}`} href="about">About Us</a>
+            <Link className={`nav-link ${returnActiveIfCurrent("about")}`} to="/about">About</Link>
+              {/* <a className={`nav-link ${returnActiveIfCurrent("about")}`} href="about">About Us</a> */}
             </li>
             <li className="nav-item mx-3 dropdown">
               <a className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}href="rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

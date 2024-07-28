@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
+  HashRouter,
+  Route,
+  Routes,
   RouterProvider,
 } from "react-router-dom";
 import HomePage from './components/pages/homePage/HomePage';
@@ -49,7 +52,17 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/about" element={<AboutPage/>} />
+        <Route path="/contact" element={<ContactPage/>} />
+        <Route path="/members" element={<MembersPage/>} />
+        <Route path="/rush" element={<RushPage/>} />
+        <Route path="/workshops" element={<WorkshopsPage/>} />
+        </Routes>
+    </HashRouter>
+    {/* <RouterProvider router={router}/> */}
   </React.StrictMode>
 );
 
