@@ -43,7 +43,7 @@ function NavBar({page} : {page: string}) {
             </li>
             <li className="nav-item mx-3 dropdown">
               
-              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}  to="/rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onClick={() => {window.location.href = "/#/rush"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}  to="/rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Rush
               </Link>
               <ul className="dropdown-menu" aria-labelledby="rushDropdown">
@@ -54,7 +54,7 @@ function NavBar({page} : {page: string}) {
             </li>
             {/* Uncomment this area when there are workshops */}
             <li className="nav-item mx-3 dropdown">
-              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("workshops")}`} to="/workshops" id="workshopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onClick={() => {window.location.href = "/#/workshops"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("workshops")}`} to="/workshops" id="workshopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Workshops
               </Link>
               <ul className="dropdown-menu" aria-labelledby="workshopDropdown">
@@ -63,7 +63,7 @@ function NavBar({page} : {page: string}) {
               </ul>
             </li>
             <li className="nav-item mx-3 dropdown">
-              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("members")}`} to="/members" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onClick={() => {window.location.href = "/#/members"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("members")}`} to="/members" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Members
               </Link>
               <ul className="dropdown-menu" aria-labelledby="membersDropdown">
