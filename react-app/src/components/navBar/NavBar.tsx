@@ -33,7 +33,7 @@ function NavBar({page} : {page: string}) {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-3">
-              <a className={`nav-link ${returnActiveIfCurrent("home")}`} href="/">Home</a>
+              <Link className={`nav-link ${returnActiveIfCurrent("home")}`} to="/">Home</Link>
             </li>
             <li className="nav-item mx-3">
             <Link className={`nav-link ${returnActiveIfCurrent("about")}`} to="/about">About</Link>
@@ -56,8 +56,8 @@ function NavBar({page} : {page: string}) {
                 Workshops
               </Link>
               <ul className="dropdown-menu" aria-labelledby="workshopDropdown">
-                <li><a className="dropdown-item" href="workshop#rsvp">RSVP</a></li>
-                <li><a className="dropdown-item" href="workshop#events">Events</a></li>
+                <li><Link className="dropdown-item" to="/workshop#rsvp">RSVP</Link></li>
+                <li><Link className="dropdown-item" to="/workshop#events">Events</Link></li>
               </ul>
             </li>
             <li className="nav-item mx-3 dropdown">
@@ -65,9 +65,9 @@ function NavBar({page} : {page: string}) {
                 Members
               </Link>
               <ul className="dropdown-menu" aria-labelledby="membersDropdown">
-                <li><a className="dropdown-item" href="members#eboard">E-Board</a></li>
-                <li><a className="dropdown-item" href="members#actives">Actives</a></li>
-                <li><a className="dropdown-item" href="members#alumni">Alumni</a></li>
+                <li><Link className="dropdown-item" to="/members#eboard">E-Board</Link></li>
+                <li><Link className="dropdown-item" to="/members#actives">Actives</Link></li>
+                <li><Link className="dropdown-item" to="/members#alumni">Alumni</Link></li>
               </ul>
             </li>
             <li className="nav-item mx-3">
