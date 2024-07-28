@@ -40,29 +40,30 @@ function NavBar({page} : {page: string}) {
               {/* <a className={`nav-link ${returnActiveIfCurrent("about")}`} href="about">About Us</a> */}
             </li>
             <li className="nav-item mx-3 dropdown">
-              <a className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}href="rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              
+              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}  to="/rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Rush
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="rushDropdown">
-                <li><a className="dropdown-item" href="rush#apply">Apply</a></li>
-                <li><a className="dropdown-item" href="rush#events">Events</a></li>
-                <li><a className="dropdown-item" href="rush#faq">FAQ</a></li>
+                <li><Link className="dropdown-item" to="/rush#apply">Apply</Link></li>
+                <li><Link className="dropdown-item" to="/rush#events">Events</Link></li>
+                <li><Link className="dropdown-item" to="/rush#faq">FAQ</Link></li>
               </ul>
             </li>
             {/* Uncomment this area when there are workshops */}
             <li className="nav-item mx-3 dropdown">
-              <a className={`nav-link dropdown-toggle ${returnActiveIfCurrent("workshops")}`} href="workshops" id="workshopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("workshops")}`} to="/workshops" id="workshopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Workshops
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="workshopDropdown">
                 <li><a className="dropdown-item" href="workshop#rsvp">RSVP</a></li>
                 <li><a className="dropdown-item" href="workshop#events">Events</a></li>
               </ul>
             </li>
             <li className="nav-item mx-3 dropdown">
-              <a className={`nav-link dropdown-toggle ${returnActiveIfCurrent("members")}`} href="members" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className={`nav-link dropdown-toggle ${returnActiveIfCurrent("members")}`} to="/members" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Members
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="membersDropdown">
                 <li><a className="dropdown-item" href="members#eboard">E-Board</a></li>
                 <li><a className="dropdown-item" href="members#actives">Actives</a></li>
@@ -70,7 +71,7 @@ function NavBar({page} : {page: string}) {
               </ul>
             </li>
             <li className="nav-item mx-3">
-              <a className={`nav-link ${returnActiveIfCurrent("contact")}`} href="contact">Contact Us</a>
+              <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/contact">Contact Us</Link>
             </li>
             <li className="nav-item mx-3" onClick={() => {setSignInOpen(true)}}
               style={hoverStyle}

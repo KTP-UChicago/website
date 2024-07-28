@@ -8,6 +8,8 @@ import Footer from '../../footer/Footer';
 import PageTemplate from '../../core/pageTemplate/PageTemplate';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
+import { useLocation } from 'react-router-dom';
+import useNavigateToId from '../../../hooks/useNavigateToId/useNavigateToId';
 
 
 interface FAQ {
@@ -58,6 +60,7 @@ const RushPage = () => {
           document.body.removeChild(script);
         };
       }, []);
+      useNavigateToId();
   return (
     <PageTemplate page="rush">
       <div className="container py-5">
@@ -191,7 +194,7 @@ const RushPage = () => {
       
 
       <div className="container py-5">
-        <div className="scroll" id="faq">
+        <section className="scroll" id="faq">
           <div className="row px-3 px-md-0">
             <h2 className="text-center mb-4">Rush FAQ</h2>
             <div>
@@ -217,7 +220,7 @@ const RushPage = () => {
                 }
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </PageTemplate>
   );

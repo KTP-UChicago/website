@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import PageTemplate from '../../core/pageTemplate/PageTemplate'
+import useNavigateToId from '../../../hooks/useNavigateToId/useNavigateToId';
 
 function WorkshopsPage() {
     useEffect(() => {
@@ -13,6 +14,7 @@ function WorkshopsPage() {
           document.body.removeChild(script);
         };
       }, []);
+      useNavigateToId();
       
   return <PageTemplate page="workshops">
          <div>
