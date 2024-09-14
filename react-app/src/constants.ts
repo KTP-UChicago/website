@@ -25,6 +25,7 @@ const alpha = {
     members: [
         "Abigail Barnes",
         "Lexington Brill",
+        "Ellen Chen",
         "Elizabeth Coble",
         "Isabella DeClue",
         "Tessie Dong",
