@@ -4,7 +4,7 @@ def sort_last_names(names):
 
 def print_names(names):
     for name in names:
-        print(name + "<br />")
+        print("\"" + name + "\",")
 
 def read_csv():
     with open("names.csv", "r") as f:

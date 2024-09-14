@@ -156,22 +156,22 @@ const zeta = {
 const eta = {
     name: "Eta",
     members: [
-        "Albert Seo",
+        "Iris Badezet-Delory",
         "Danielle Brennan",
-        "Fredric Ngo",
-        "Grace Lu",
         "Guan Chen",
         "Hudson Chung",
-        "Iris Badezet-Delory",
-        "John Rugemalila",
-        "Julie Xie",
-        "Kara Taylor",
-        "Nathan Delisle",
         "Paulina DePaulo",
-        "Reilly Vejar",
-        "Sebastien Ludwig",
+        "Nathan Delisle",
         "Ta'Naija Fair",
-        "Winston Li"
+        "Winston Li",
+        "Grace Lu",
+        "Sebastien Ludwig",
+        "Fredric Ngo",
+        "John Rugemalila",
+        "Albert Seo",
+        "Kara Taylor",
+        "Reilly Vejar",
+        "Julie Xie"
     ]
 }
 

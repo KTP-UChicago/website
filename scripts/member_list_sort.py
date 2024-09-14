@@ -1,5 +1,5 @@
 def read_csv():
-    with open("../assets/memberList.csv", "r") as f:
+    with open("../react-app/public/assets/memberList.csv", "r") as f:
         member_data = f.read().splitlines()
     member_data = member_data[1:]
     return member_data
@@ -21,7 +21,7 @@ def write_csv():
     member_data = read_csv()
     member_data_sorted = sort_last_names(member_data)
     member_data_cleaned = clean_data(member_data_sorted)
-    with open("../assets/memberList.csv", "w") as f:
+    with open("../react-app/public/assets/memberList.csv", "w") as f:
         f.write("First,Last,Headshot,Pledge Class,Grad Year,Linkedin\n")
         for member in member_data_cleaned:
             f.write(member + "\n")
