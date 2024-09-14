@@ -77,7 +77,7 @@ function CourseReviewsPage() {
         </>
          : <>
           <h1>Access Denied</h1>
-          <p>Please  <a onClick={handleLogin}>log in</a>  to view the course reviews page.</p>
+          <p>Please  <a style={{color: "blue"}} onClick={handleLogin}>log in</a>  to view the course reviews page.</p>
           </>
     }
          

@@ -20,7 +20,7 @@ function AlumniDatabasePage() {
         }
         loadData();
         
-    }, [])
+    }, [user])
 
     // Add a conditional statement to display the alumni database only if the user is authenticated
     return <PageTemplate page="alumni-database">
@@ -47,7 +47,7 @@ function AlumniDatabasePage() {
           </Grid>
           </Container> : <>
           <h1>Access Denied</h1>
-          <p>Please <a onClick={handleLogin}>log in</a> to view the alumni database.</p>
+          <p>Please <a style={{color: "blue"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
           </>
     }
          
