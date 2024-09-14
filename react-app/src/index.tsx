@@ -21,6 +21,7 @@ import RedirectToHash from './components/redirectToHash/RedirecToHash';
 import { FirebaseProvider } from './contexts/FirebaseContext';
 import { AuthenticationContextProvider } from './contexts/AuthenticationContext';
 import AlumniDatabasePage from './components/pages/alumniDatabasePage/AlumniDatabasePage';
+import CourseReviewsPage from './components/pages/courseReviewsPage/CourseReviewsPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -68,6 +69,7 @@ root.render(
           <Route path="/rush" element={<RushPage/>} />
           <Route path="/workshops" element={<WorkshopsPage/>} />
           <Route path="/alumni-database" element={<AlumniDatabasePage/>} />
+          <Route path="/course-reviews" element={<CourseReviewsPage/>} />
           <Route path="*" element={<Navigate to="/" replace />}/>
           </Routes>
       </HashRouter>

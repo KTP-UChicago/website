@@ -14,6 +14,7 @@ function AlumniDatabasePage() {
     const [data, setData] = useState<AlumniCardProps[]>([]);
     useEffect(() => {
         const loadData = async () => {
+            if (!user) return;
             const querySnapshot = await getDocs(query(collection(firestore, "alumniDatabase"), orderBy("name")));
             setData(querySnapshot.docs.map(doc => doc.data() as AlumniCardProps));
         }

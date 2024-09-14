@@ -75,11 +75,25 @@ function NavBar({page} : {page: string}) {
             <li className="nav-item mx-3">
               <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/contact">Contact Us</Link>
             </li>
-            {
+            {/* {
               user && <li className="nav-item mx-3">
               <Link className={`nav-link ${returnActiveIfCurrent("alumni-database")}`} to="/alumni-database">Alumni Database</Link>
             </li>
             }
+            {
+              user && <li className="nav-item mx-3">
+              <Link className={`nav-link ${returnActiveIfCurrent("course-reviews")}`} to="/course-reviews">Course Reviews</Link>
+            </li>
+            } */}
+             <li className="nav-item mx-3 dropdown">
+              <Link className={`nav-link dropdown-toggle`} to="/workshops" id="memberPortalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Member Portal
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="memberPortalDropdown">
+                <li> <Link className={`nav-link ${returnActiveIfCurrent("alumni-database")}`} to="/alumni-database">Alumni Database</Link></li>
+                <li><Link className={`nav-link ${returnActiveIfCurrent("course-reviews")}`} to="/course-reviews">Course Reviews</Link></li>
+              </ul>
+            </li>
             {
               user ? <li className="nav-item mx-3" onClick={handleLogout}
               style={hoverStyle}
