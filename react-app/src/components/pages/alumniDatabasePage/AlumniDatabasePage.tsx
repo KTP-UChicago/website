@@ -9,7 +9,7 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
 
 function AlumniDatabasePage() {
-    const {user} = useAuthentication();
+    const {user, handleLogin} = useAuthentication();
     const {firestore} = useFirebase();
     const [data, setData] = useState<AlumniCardProps[]>([]);
     useEffect(() => {
@@ -47,7 +47,7 @@ function AlumniDatabasePage() {
           </Grid>
           </Container> : <>
           <h1>Access Denied</h1>
-          <p>Please log in to view the alumni database.</p>
+          <p>Please <a onClick={handleLogin}>log in</a> to view the alumni database.</p>
           </>
     }
          

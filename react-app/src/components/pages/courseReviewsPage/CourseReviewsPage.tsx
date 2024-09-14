@@ -16,7 +16,7 @@ import {REVIEWS, Review} from "./courseReviews";
 
 
 function CourseReviewsPage() {
-    const {user} = useAuthentication();
+    const {user, handleLogin} = useAuthentication();
 
     const [filteredReviews, setFilteredReviews] = useState<Review[]>([]);
     const [selectedDept, setSelectedDept] = useState<string | null>(null);
@@ -77,7 +77,7 @@ function CourseReviewsPage() {
         </>
          : <>
           <h1>Access Denied</h1>
-          <p>Please log in to view the course reviews page.</p>
+          <p>Please  <a onClick={handleLogin}>log in</a>  to view the course reviews page.</p>
           </>
     }
          
