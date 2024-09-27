@@ -1,8 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import NavBar from '../../navBar/NavBar';
-import Footer from '../../footer/Footer';
 import PageTemplate from '../../core/pageTemplate/PageTemplate';
 
 const HomePage = () => {
@@ -17,7 +15,7 @@ const HomePage = () => {
         <div className="mb-4">
           <a href="rush.html#apply" className="btn-rush">RUSH</a>
           {/* <a href="https://forms.gle/5bAZQeWQq2mRRwfb6" className="btn-rush">APPLY</a> */}
-          <a href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a>
+          <a style={{marginLeft: 12}}href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a>
           {/* <a href="workshop.html#rsvp" className="btn-rush">WORKSHOPS</a> */}
         </div>
       </div>
