@@ -47,7 +47,7 @@ function AlumniDatabasePage() {
           </Grid>
           </Container> : <>
           <h1>Access Denied</h1>
-          <p>Please <a style={{color: "blue"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
+          <p>Please <a style={{color: "blue", cursor:"pointer"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
           </>
     }
          
