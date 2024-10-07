@@ -76,7 +76,7 @@ const RushPage = () => {
               {/* If you are curious about our Fall 2024 cycle, please fill out our interest form. */}
             </p>
             <div style={{textAlign: 'center'}}>
-              <a href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">Apply Now!</a>
+              <a href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">APPLY</a>
             </div>
 
           </div>
