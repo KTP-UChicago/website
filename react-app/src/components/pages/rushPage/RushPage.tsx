@@ -70,12 +70,12 @@ const RushPage = () => {
             <img className="img-fluid" src="assets/img/rush/banner.png" alt="Rush" />
             {/* <h2 className="text-center mb-4">Rush KTP Fall 2024</h2> */}
             <p style={{ textAlign: 'center', paddingTop: 24 }}>
-              We are excited to announce our Fall 2024 Rush Cycle. Our application will be live soon and due at 11:59 PM on Thursday, October 10th.
+              We are excited to announce our Fall 2024 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, October 10th.
               Check out our Instagram (<a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more
               about KTP. If you are curious about our Fall 2024 cycle, please fill out our interest form.
             </p>
             <div style={{textAlign: 'center'}}>
-              <a href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a>
+              <a href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">Apply Now!</a>
             </div>
 
           </div>

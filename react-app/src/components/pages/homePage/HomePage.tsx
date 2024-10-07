@@ -14,8 +14,8 @@ const HomePage = () => {
         </h3>
         <div className="mb-4">
           <a href="rush.html#apply" className="btn-rush">RUSH</a>
-          {/* <a href="https://forms.gle/5bAZQeWQq2mRRwfb6" className="btn-rush">APPLY</a> */}
-          <a style={{marginLeft: 12}}href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a>
+          <a style={{marginLeft: 12}}href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">APPLY</a>
+          {/* <a style={{marginLeft: 12}}href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a> */}
           {/* <a href="workshop.html#rsvp" className="btn-rush">WORKSHOPS</a> */}
         </div>
       </div>
