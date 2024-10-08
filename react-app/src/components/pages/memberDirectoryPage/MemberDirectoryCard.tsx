@@ -1,5 +1,5 @@
 
-interface MemberInfo {
+export interface MemberInfo {
     name: string,
     pledgeClass: string,
     major: string,
@@ -12,7 +12,7 @@ interface MemberInfo {
     pastClasses: string[]
 }
 
-interface ContactInfo {
+export interface ContactInfo {
     email: string,
     phone: string | undefined,
     linkedIn: string | undefined,
