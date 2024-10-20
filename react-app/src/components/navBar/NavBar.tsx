@@ -79,6 +79,7 @@ function NavBar({page} : {page: string}) {
               <ul className="dropdown-menu" aria-labelledby="memberPortalDropdown">
                 <li> <Link className="dropdown-item" to="/alumni-database">Alumni Database</Link></li>
                 <li><Link className="dropdown-item" to="/course-reviews">Course Reviews</Link></li>
+                <li><Link className="dropdown-item" to="/member-directory">Member Directory</Link></li>
               </ul>
             </li>
             <li className="nav-item mx-3">

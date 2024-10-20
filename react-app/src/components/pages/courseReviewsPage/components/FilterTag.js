@@ -3,7 +3,7 @@ import './FilterTag.css';
 
 const FilterTag = ({ label, onRemove }) => {
   return (
-    <div className="filter-tag">
+    <div  onClick={onRemove} className="filter-tag">
       {label}
       <button className="remove-button" onClick={onRemove}>X</button>
     </div>

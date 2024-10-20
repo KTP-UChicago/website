@@ -16,7 +16,8 @@ function PageTemplate({ page, children }: { page: string, children: React.ReactN
         "rush": "Rush | KTP",
         "workshops": "Workshops | KTP",
         "alumni-database" : "Alumni Database | KTP",
-        "course-reviews": "Course Reviews | KTP"
+        "course-reviews": "Course Reviews | KTP",
+        "member-directory": "Member Directory | KTP"
     };
 
     useEffect(() => {

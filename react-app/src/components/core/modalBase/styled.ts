@@ -9,6 +9,7 @@ export const ModalWrapper = styled("div")({
     position: "absolute",
     borderRadius: "9px",
     border: "1px solid #d9d9d9",
-    width: "400px",
+    width: "90vw",
+    maxWidth: "400px"
   });
   

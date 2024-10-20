@@ -8,7 +8,7 @@ const HomePage = () => {
     <PageTemplate page="home">
       <div className="container-fluid hero">
       <div className="text-center text-lg-start pt-5 ps-lg-5">
-        <h1 className="hero-title mb-4">Kappa Theta Pi</h1>
+        <h1 className="hero-title mb-4" style={{fontSize: 84}}>Kappa Theta Pi</h1>
         <h3 className="mb-5 mb-lg-4 px-4 px-lg-0">
           Professional Technology Fraternity<br />at The University of Chicago
         </h3>

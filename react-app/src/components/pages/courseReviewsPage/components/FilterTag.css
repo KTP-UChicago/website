@@ -6,11 +6,16 @@
     padding: 5px 10px;
     margin: 5px;
   }
+
+  .filter-tag:hover {
+    background-color: #d0d0d0;
+    cursor: pointer;
+  }
   
   .remove-button {
     background: none;
     border: none;
-    margin-left: 5px;
+    padding-left: 5px;
     cursor: pointer;
     font-weight: bold;
   }
