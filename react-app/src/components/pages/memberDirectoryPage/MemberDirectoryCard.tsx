@@ -28,7 +28,7 @@ function MemberDirectoryCard({props}: {props: MemberInfo}) {
     const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-    <MemberEditModal isOpen={isOpen} setOpen={(open) => {setIsOpen(open)}} member={props}/>
+    <MemberEditModal isOpen={isOpen} setOpen={(open) => {setIsOpen(open); console.log(props)}} member={props}/>
      <S.StyledCard>
         <CardContent>
 

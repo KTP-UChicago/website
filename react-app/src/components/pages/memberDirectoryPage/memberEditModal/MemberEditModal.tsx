@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import ModalBase from '../../../core/modalBase/ModalBase'
 import { InputLabel, Select, MenuItem, SelectChangeEvent, TextField } from '@mui/material'
 import FormControl from '@mui/material/FormControl';
@@ -15,6 +15,16 @@ function MemberEditModal({isOpen, setOpen, member}: {isOpen: boolean, setOpen: (
     const [notes, setNotes] = useState(member.notes);
     const [major, setMajor] = useState(member.major);
     const {firestore} = useFirebase();
+
+      // This effect can be used to sync member data when member changes
+    useEffect(() => {
+        setPickUp(member.isPickingUp);
+        setPhoneNumber(member.contactInfo.phone);
+        setSocials(member.contactInfo.instagram);
+        setNotes(member.notes);
+        setMajor(member.major);
+    }, [member]);
+    
     const handlePickUpChange = (event: SelectChangeEvent<unknown>) => {
         setPickUp(event.target.value === 'true');
       };
