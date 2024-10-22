@@ -64,6 +64,7 @@ function MemberDirectory() {
     return <PageTemplate page="member-directory">
         <div className="container pt-5">
         <h2 className="text-center mb-5">Member Directory</h2>
+        <p style={{ textAlign: 'center', paddingTop: 24 }}>Click <a href="https://docs.google.com/presentation/d/1zTPNQ20HAlfbeVFOQHQL0Y07YWKjk-sBIvtliNUkz9Y/edit?usp=sharing">here</a> to learn more about brothers! </p>
         <MemberFilter
           onYearSelect={setSelectedYear}
           onClassSelect={setSelectedClass}
