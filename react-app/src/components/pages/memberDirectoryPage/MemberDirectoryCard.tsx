@@ -35,7 +35,7 @@ function MemberDirectoryCard({props}: {props: MemberInfo}) {
             <img src={image} style={{height: "100px"}} onError={(e: any) => e.target.src = 'assets/img/members/Filler.jpg'} alt={name} />
           <Typography gutterBottom variant="h5" component="div">
             {name}
-            {(user?.email?.toLowerCase() == contactInfo.email.toLowerCase()) && <IconButton onClick={() => {setIsOpen(true)}}>
+            {(user?.email?.toLowerCase() == contactInfo.email.toLowerCase()) && <IconButton style={{paddingLeft: "8px"}} onClick={() => {setIsOpen(true)}}>
            <EditIcon/>
         </IconButton>}
           </Typography>

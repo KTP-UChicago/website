@@ -18,10 +18,22 @@ function MemberDirectory() {
     const [selectedClass, setSelectedClass] = useState<string | null>(null);
     const [selectedIsPickingUp, setSelectedIsPickingUp] = useState<string | null>(null);
     useEffect(() => {
+          const getAlternatingBoolean = (): Boolean => {
+            // Get the current date
+            const today = new Date();
+          
+            // Calculate the number of days since January 1, 1970
+            const msInDay = 24 * 60 * 60 * 1000;
+            const daysSinceEpoch = Math.floor(today.getTime() / msInDay);
+          
+            // Alternate boolean based on the day count
+            return daysSinceEpoch % 2 === 0;
+          }
           const loadData = async () => {
             if (!user) return;
             const querySnapshot = await getDocs(query(collection(firestore, "memberDirectory"), orderBy("name")));
             const data = querySnapshot.docs.map(doc => doc.data() as MemberInfo);
+            !getAlternatingBoolean() ? data.sort((a, b) => a.name.localeCompare(b.name)) : data.sort((a, b) => b.name.localeCompare(a.name));
             setMembers(data);
             setFilteredMembers(data);
           }
