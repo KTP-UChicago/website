@@ -5,6 +5,10 @@ def get_new_members():
     return names
 
 def main():
+    """Add new members to the memberList.csv file.
+    Given a list of names in names.csv, this function will add each name to the memberList.csv file.
+    It expects the names to be in the format "First Last" and will create a new entry in the memberList.csv file
+    """
     names = get_new_members()
     with open("../react-app/public/assets/memberList.csv", "+a") as f:
         for name in names:

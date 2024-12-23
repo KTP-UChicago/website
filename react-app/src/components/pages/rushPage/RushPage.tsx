@@ -50,7 +50,6 @@ const faqs: FAQ[] = [
 
 const RushPage = () => {
     useEffect(() => {
-        // Optionally, you can include JavaScript logic here if needed
         const script = document.createElement('script');
         script.src = "assets/js/timeline.js";
         script.async = true;
