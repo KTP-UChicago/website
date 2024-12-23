@@ -34,4 +34,5 @@ componentName/
 3. Use `npm start` to run the application on `localhost:3000`
 
 
-
+# Github Actions
+We use Github Actions to automatically deploy the website to the `gh-pages` branch. The workflow is located in `.github/workflows/jekyll-gh-pages.yml`. The workflow is triggered when a push is made to the `main` branch. The workflow will build the react application and deploy it to the `gh-pages` branch. The `gh-pages` branch is used to host the website. If you need more commands to be run before the deployment, edit the file accordingly.
