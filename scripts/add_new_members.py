@@ -19,11 +19,11 @@ def main():
             last_name = name_info[1]
             data = [first_name, last_name]
             data.append(first_name + "_" + last_name)
-            data.append("Eta")
-            data.append("2027")
+            data.append("Theta")
+            data.append("2028")
             data.append("MISSING")
             string = ",".join(data)
             f.write(string + "\n")
-    
+
 if __name__ == "__main__":
     main()
