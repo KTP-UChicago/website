@@ -91,7 +91,7 @@ function WorkshopsPage() {
                        technology company PEAK6! There will be time for a Q and A with the recruiter.
                       </p>
                       <p style={{ fontStyle: 'italic' }}>
-                        Tuesday, February 18th | 5:00–6:00 PM | Tribune Lounge (2nd Floor Reynolds)
+                        Tuesday, February 18th | 5:00–6:00 PM | McCormick Lounge (1st floor Reynolds Club)
                       </p>
                     </div>
                   </div>
@@ -107,7 +107,7 @@ function WorkshopsPage() {
                         We will have experiences ranging from Big Tech, Startups, and Finance.
                       </p>
                       <p style={{ fontStyle: 'italic' }}>
-                        Monday, February 28th | 6:00–7:00 PM | Stuart 105
+                        Monday, February 24th | 6:00–7:00 PM | Stuart 105
                       </p>
                     </div>
                   </div>
