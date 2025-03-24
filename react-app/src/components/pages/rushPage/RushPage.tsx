@@ -54,7 +54,7 @@ const RushPage = () => {
         script.src = "assets/js/timeline.js";
         script.async = true;
         document.body.appendChild(script);
-        
+
         return () => {
           document.body.removeChild(script);
         };
@@ -65,17 +65,16 @@ const RushPage = () => {
       <div className="container py-5">
         <div className="scroll" id="apply">
           <div className="row px-3 px-md-0">
-            <h2 className="text-center mb-4">Rush KTP Fall 2024</h2>
+            <h2 className="text-center mb-4">Rush KTP Spring 2025</h2>
             <img className="img-fluid" src="assets/img/rush/banner.png" alt="Rush" />
-            {/* <h2 className="text-center mb-4">Rush KTP Fall 2024</h2> */}
             <p style={{ textAlign: 'center', paddingTop: 24 }}>
-              We are excited to announce our Fall 2024 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, October 10th.
+              We are excited to announce our Spring 2025 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, March 27th.
               Check out our Instagram (<a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more
-              about KTP. 
+              about KTP.
               {/* If you are curious about our Fall 2024 cycle, please fill out our interest form. */}
             </p>
             <div style={{textAlign: 'center'}}>
-              <a href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">APPLY</a>
+              <a href="https://forms.gle/Q9R3WHH25YJ11J5y8" className="btn-rush">APPLY</a>
             </div>
 
           </div>
@@ -86,10 +85,10 @@ const RushPage = () => {
         <div className="container py-5">
           <div className="scroll" id="events">
             <div className="row px-3 px-md-0">
-              <h2 className="text-center mb-4">Fall Events</h2>
+              <h2 className="text-center mb-4">Spring Events</h2>
               <p style={{ textAlign: 'center' }}>
                 We require all rushees to attend at least one info session and one other rush event. If this isn't possible for you,
-                reach out to one of our Co-Directors of Membership, Kyle (<a href="mailto:kylew@uchicago.edu">kylew@uchicago.edu</a>) or Ryan (<a href="mailto:ryanlobo@uchicago.edu">ryanlobo@uchicago.edu</a>).
+                reach out to one of our Co-Directors of Membership, Guan (<a href="mailto:guanc@uchicago.edu">guanc@uchicago.edu</a>) or  Helen (<a href="mailto:helentian@uchicago.edu">helentian@uchicago.edu</a>).
               </p>
               <div className="cd-timeline js-cd-timeline">
                 <div className="container cd-timeline__container">
@@ -99,9 +98,9 @@ const RushPage = () => {
                     </div>
                     <div className="cd-timeline__content">
                       <h4>Info Session 1</h4>
-                      <p>
+                      {/* <p>
                         <a href="https://www.facebook.com/events/2888397667981911/ ">Facebook Event Link (Please RSVP)</a>
-                      </p>
+                      </p> */}
                       <p>
                         <b>We require all rushees to attend one info session.</b>
                         They're a great opportunity for you to learn the basics about KTP, meet some
@@ -109,25 +108,7 @@ const RushPage = () => {
                         of.
                       </p>
                       <a style={{ fontStyle: 'italic' }}>
-                        Monday, October 7th | 8:00&#8211;9:00 PM | Stuart 105
-                      </a>
-                    </div>
-                  </div>
-                  <div className="cd-timeline__block">
-                    <div className="cd-timeline__img">
-                      <img src="assets/img/rush/pyramid.jpg" alt="" />
-                    </div>
-                    <div className="cd-timeline__content">
-                      <h4>Meet and Greet</h4>
-                      <p>
-                        <a href="https://www.facebook.com/events/421346050587491/">Facebook Event Link (Please RSVP)</a>
-                      </p>
-                      <p>
-                        <b>We require all rushees to attend one additional event.</b>
-                        Come join us for a casual session to speak with current brothers and learn more about our chapter!
-                      </p>
-                      <a style={{ fontStyle: 'italic' }}>
-                        Tuesday, October 8th | 7:00&#8211;9:00 PM | McCormick Lounge
+                        Monday, March 24th | 8:00&#8211;9:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -137,9 +118,9 @@ const RushPage = () => {
                     </div>
                     <div className="cd-timeline__content">
                       <h4>Info Session 2</h4>
-                      <p>
+                      {/* <p>
                         <a href="https://www.facebook.com/events/1210823223571552/">Facebook Event Link (Please RSVP)</a>
-                      </p>
+                      </p> */}
                       <p>
                         <b>We require all rushees to attend one info session.</b>
                         They're a great opportunity for you to learn the basics about KTP, meet some
@@ -147,7 +128,7 @@ const RushPage = () => {
                         of.
                       </p>
                       <a style={{ fontStyle: 'italic' }}>
-                        Wednesday, October 9th | 8:00&#8211;9:00 PM | Stuart 105
+                        Tuesday, March 25th | 8:00&#8211;9:00 PM | Cox Lounge (Stuart 020)
                       </a>
                     </div>
                   </div>
@@ -157,9 +138,9 @@ const RushPage = () => {
                     </div>
                     <div className="cd-timeline__content">
                       <h4>Charity Event for Color a Smile</h4>
-                      <p>
+                      {/* <p>
                         <a href="https://www.facebook.com/events/505328835683278/">Facebook Event Link (Please RSVP)</a>
-                      </p>
+                      </p> */}
                       <p>
                         <b>We require all rushees to attend one additional event.</b>
                         Contributing to the Color A Smile Charity with your fellow rushees. We will have drawings for you to color and
@@ -167,7 +148,25 @@ const RushPage = () => {
                         overseas, and many others.
                       </p>
                       <a style={{ fontStyle: 'italic' }}>
-                        Thursday, October 10th | 8:00&#8211;9:30 PM | McCormick Lounge
+                        Wednesday, March 26th | 8:00&#8211;10:00 PM | Cox Lounge (Stuart 020)
+                      </a>
+                    </div>
+                  </div>
+                  <div className="cd-timeline__block">
+                    <div className="cd-timeline__img">
+                      <img src="assets/img/rush/pyramid.jpg" alt="" />
+                    </div>
+                    <div className="cd-timeline__content">
+                      <h4>Speed Dating</h4>
+                      {/* <p>
+                        <a href="https://www.facebook.com/events/421346050587491/">Facebook Event Link (Please RSVP)</a>
+                      </p> */}
+                      {/* <p>
+                        <b>We require all rushees to attend one additional event.</b>
+                        Come join us for a casual session to speak with current brothers and learn more about our chapter!
+                      </p> */}
+                      <a style={{ fontStyle: 'italic' }}>
+                        Thursday, March 27th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -195,9 +194,9 @@ const RushPage = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
-      
+
 
       <div className="container py-5">
         <section className="scroll" id="faq">
@@ -218,10 +217,10 @@ const RushPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             {faq.answer}
-                            </AccordionDetails> 
+                            </AccordionDetails>
 
-                        </Accordion> 
-                    )      
+                        </Accordion>
+                    )
                     })
                 }
             </div>
