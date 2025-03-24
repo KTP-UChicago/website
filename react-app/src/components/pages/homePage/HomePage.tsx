@@ -13,8 +13,8 @@ const HomePage = () => {
           Professional Technology Fraternity<br />at The University of Chicago
         </h3>
         <div className="mb-4">
-          <a href="rush.html#apply" className="btn-rush">RUSH</a>
-          <a style={{marginLeft: 12}}href="https://forms.gle/BCSHPrukcbb6RAoi7" className="btn-rush">APPLY</a>
+          <a href="https://uchicagoktp.com/#/rush" className="btn-rush">RUSH</a>
+          <a style={{marginLeft: 12}}href="https://forms.gle/Q9R3WHH25YJ11J5y8" className="btn-rush">APPLY</a>
           {/* <a style={{marginLeft: 12}}href="https://forms.gle/hWpSYwacfYaQCype6" className="btn-rush">INTEREST FORM</a> */}
           {/* <a href="workshop.html#rsvp" className="btn-rush">WORKSHOPS</a> */}
         </div>
