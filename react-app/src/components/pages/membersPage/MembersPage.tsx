@@ -86,7 +86,7 @@ const MembersPage = () => {
               { name: "Minseo Kim", role: "Director of Marketing", image: "Minseo_Kim.jpg" },
               { name: "Guan Chen", role: "Co-Director of Membership", image: "Guan_Chen.jpg" },
               { name: "Helen Tian", role: "Co-Director of Membership", image: "Helen_Tian.jpg" },
-              // { name: "Fatima Madey", role: "Director of Outreach", image: "Fatima_Madey.jpg" },
+              { name: "Fatima Madey", role: "Director of Outreach", image: "Fatima_Madey.jpg" },
               { name: "Clarice Kim", role: "Co-Director of Professional Development", image: "Clarice_Kim.jpg" },
               { name: "Arya Sapra", role: "Co-Director of Professional Development", image: "Arya_Sapra.jpg" },
               { name: "John Rugemalila", role: "Director of Technology", image: "John_Rugemalila.jpg" },
