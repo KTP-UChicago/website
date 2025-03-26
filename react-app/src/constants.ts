@@ -176,4 +176,26 @@ const eta = {
     ]
 }
 
-export const CLASSES = [founders, alpha, beta, gamma, delta, epsilon, zeta, eta]
+const theta = {
+    name: "Theta",
+    members: [
+        "Anna Yan",
+        "Caden Tebow",
+        "Chloe Eng",
+        "Clarisse Cheung",
+        "Danny Willow Liu",
+        "Defne Meric Erdogan",
+        "Eddie Wu",
+        "Elena Loucks",
+        "Enzo Nakornsri",
+        "Eric Wong",
+        "Grace Janusz",
+        "Luke Jimenez",
+        "Michael Fujiyama",
+        "Rhea Gupta",
+        "Sabrina Chen",
+        "Yunah Chung"
+    ]
+}
+
+export const CLASSES = [founders, alpha, beta, gamma, delta, epsilon, zeta, eta, theta ]
