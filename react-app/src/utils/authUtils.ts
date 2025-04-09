@@ -139,7 +139,6 @@ const VALID_EMAILS = new Set([
   "rkxing@uchicago.edu",
   "oscarc@uchicago.edu",
   "quincyleung@uchicago.edu",
-  "krjohn480@gmail.com",
   "yunaotsk@uchicago.edu",
   "tavelm@uchicago.edu",
   "kerryz@uchicago.edu",
