@@ -138,7 +138,8 @@ const VALID_EMAILS = new Set([
   "mkim27@uchicago.edu",
   "rkxing@uchicago.edu",
   "oscarc@uchicago.edu",
-  "quincyleung@uchicago.edu"
+  "quincyleung@uchicago.edu",
+  "krjohn480@gmail.com"
 ]);
 
 const validateEmail = (email: string): boolean => {
