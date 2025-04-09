@@ -65,7 +65,7 @@ function MemberDirectory() {
     return <PageTemplate page="member-directory">
         <div className="container pt-5">
         <h2 className="text-center mb-5">Member Directory</h2>
-        <p style={{ textAlign: 'center', paddingTop: 24 }}>Click <a href="https://docs.google.com/presentation/d/1zTPNQ20HAlfbeVFOQHQL0Y07YWKjk-sBIvtliNUkz9Y/edit?usp=sharing">here</a> to learn more about brothers! </p>
+        <p style={{ textAlign: 'center', paddingTop: 24 }}>Click <a href="https://docs.google.com/presentation/d/1Fsvg3E2xPiXjo9gYIZZWvQ4YqCVBxHipwugEOZGD4Pg/edit?fbclid=IwY2xjawJjnVBleHRuA2FlbQIxMAABHlkBMyHYiVbEtYu-vbp24StGGy1qMqBCm9XtL0gQUEX9NIb3gTM56mZnXu5R_aem_qtOaIKGfDDqJvHI7SkpS1A#slide=id.p">here</a> to learn more about brothers! </p>
         <MemberFilter
           onYearSelect={setSelectedYear}
           onClassSelect={setSelectedClass}
