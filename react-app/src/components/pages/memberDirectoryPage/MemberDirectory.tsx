@@ -8,6 +8,7 @@ import { useFirebase } from '../../../contexts/FirebaseContext';
 import PageTemplate from '../../core/pageTemplate/PageTemplate';
 import MemberFilter from './memberFilter/MemberFilter';
 import FilterTag from '../courseReviewsPage/components/FilterTag';
+import AdminBulkAdd from './AdminBulkAdd';
 
 function MemberDirectory() {
     const {user, handleLogin} = useAuthentication();
@@ -77,15 +78,18 @@ function MemberDirectory() {
       </div>
 
         {user ? 
-          <Grid container spacing={4}>
-              {filteredMembers.map((member, index) => (
-              <Grid item key={index} xs={12} sm={4} md={3}>
-                  <MemberDirectoryCard
-                    props={member}
-                  />
-              </Grid>
-              ))}
-          </Grid>
+          <>
+            <AdminBulkAdd />
+            <Grid container spacing={4}>
+                {filteredMembers.map((member, index) => (
+                <Grid item key={index} xs={12} sm={4} md={3}>
+                    <MemberDirectoryCard
+                      props={member}
+                    />
+                </Grid>
+                ))}
+            </Grid>
+          </>
  : <>
           <h1>Access Denied</h1>
           <p>Please <a style={{color: "blue", cursor:"pointer"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
@@ -97,4 +101,3 @@ function MemberDirectory() {
 }
 
 export default MemberDirectory
-
