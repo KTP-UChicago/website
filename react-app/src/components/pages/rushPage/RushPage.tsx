@@ -65,10 +65,10 @@ const RushPage = () => {
       <div className="container py-5">
         <div className="scroll" id="apply">
           <div className="row px-3 px-md-0">
-            <h2 className="text-center mb-4">Rush KTP Spring 2025</h2>
+            <h2 className="text-center mb-4">Rush KTP Fall 2025</h2>
             <img className="img-fluid" src="assets/img/rush/banner.png" alt="Rush" />
             <p style={{ textAlign: 'center', paddingTop: 24 }}>
-              We are excited to announce our Spring 2025 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, October 9th.
+              We are excited to announce our Fall 2025 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, October 9th.
               Check out our Instagram (<a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more
               about KTP.
               {/* If you are curious about our Fall 2025 cycle, please fill out our interest form. */}
@@ -85,7 +85,7 @@ const RushPage = () => {
         <div className="container py-5">
           <div className="scroll" id="events">
             <div className="row px-3 px-md-0">
-              <h2 className="text-center mb-4">Spring Events</h2>
+              <h2 className="text-center mb-4">Fall Events</h2>
               <p style={{ textAlign: 'center' }}>
                 We require all rushees to attend at least one info session and one other rush event. If this isn't possible for you,
                 reach out to one of our Substitute Co-Directors of Membership, Alissa Cheong (<a href="mailto:amkc@uchicago.edu">amkc@uchicago.edu</a>) or Adrian Dai (<a href="mailto:daia@uchicago.edu">daia@uchicago.edu</a>).
