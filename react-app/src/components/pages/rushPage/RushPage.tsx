@@ -128,7 +128,7 @@ const RushPage = () => {
                         of.
                       </p>
                       <a style={{ fontStyle: 'italic' }}>
-                        Tuesday, October 7th | 8:00&#8211;9:00 PM | Cox Lounge (Stuart 020)
+                        Tuesday, October 7th | 8:00&#8211;9:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ const RushPage = () => {
                         overseas, and many others.
                       </p>
                       <a style={{ fontStyle: 'italic' }}>
-                        Wednesday, October 10th | 8:00&#8211;10:00 PM | Cox Lounge (Stuart 020)
+                        Wednesday, October 10th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
