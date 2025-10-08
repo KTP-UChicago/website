@@ -73,18 +73,15 @@ const RushPage = () => {
         <div className="scroll" id="apply">
           <div className="row px-3 px-md-0">
             <h2 className="text-center mb-4">Rush KTP Fall 2025</h2>
-            <img className="img-fluid" src="assets/img/rush/banner.jpeg" alt="Rush" />
-            <p style={{ textAlign: "center", paddingTop: 24 }}>
-              We are excited to announce our Fall 2025 Rush Cycle. Our application is now live and
-              due at 11:59 PM on Thursday, October 9th. Check out our Instagram (
-              <a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more about
-              KTP.
-              {/* If you are curious about our Fall 2024 cycle, please fill out our interest form. */}
+            <img className="img-fluid" src="assets/img/rush/banner.png" alt="Rush" />
+            <p style={{ textAlign: 'center', paddingTop: 24 }}>
+              We are excited to announce our Fall 2025 Rush Cycle. Our application is now live and due at 11:59 PM on Thursday, October 9th.
+              Check out our Instagram (<a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more
+              about KTP.
+              {/* If you are curious about our Fall 2025 cycle, please fill out our interest form. */}
             </p>
-            <div style={{ textAlign: "center" }}>
-              <a href="http://tinyurl.com/f25application" className="btn-rush">
-                APPLY
-              </a>
+            <div style={{textAlign: 'center'}}>
+              <a href="http://tinyurl.com/f25application" className="btn-rush">APPLY</a>
             </div>
           </div>
         </div>
@@ -95,11 +92,9 @@ const RushPage = () => {
           <div className="scroll" id="events">
             <div className="row px-3 px-md-0">
               <h2 className="text-center mb-4">Fall Events</h2>
-              <p style={{ textAlign: "center" }}>
-                We require all rushees to attend at least one info session and one other rush event.
-                If this isn't possible for you, reach out to one of our Co-Directors of Membership,
-                Guan (<a href="mailto:guanc@uchicago.edu">guanc@uchicago.edu</a>) or Helen (
-                <a href="mailto:helentian@uchicago.edu">helentian@uchicago.edu</a>).
+              <p style={{ textAlign: 'center' }}>
+                We require all rushees to attend at least one info session and one other rush event. If this isn't possible for you,
+                reach out to one of our Substitute Co-Directors of Membership, Alissa Cheong (<a href="mailto:amkc@uchicago.edu">amkc@uchicago.edu</a>) or Adrian Dai (<a href="mailto:daia@uchicago.edu">daia@uchicago.edu</a>).
               </p>
               <div className="cd-timeline js-cd-timeline">
                 <div className="container cd-timeline__container">
@@ -118,7 +113,7 @@ const RushPage = () => {
                         of our members, and decide if our community is one you’d like to become a
                         part of.
                       </p>
-                      <a style={{ fontStyle: "italic" }}>
+                      <a style={{ fontStyle: 'italic' }}>
                         Monday, October 6th | 8:00&#8211;9:00 PM | McCormick Lounge
                       </a>
                     </div>
@@ -138,7 +133,7 @@ const RushPage = () => {
                         of our members, and decide if our community is one you’d like to become a
                         part of.
                       </p>
-                      <a style={{ fontStyle: "italic" }}>
+                      <a style={{ fontStyle: 'italic' }}>
                         Tuesday, October 7th | 8:00&#8211;9:00 PM | McCormick Lounge
                       </a>
                     </div>
@@ -158,7 +153,7 @@ const RushPage = () => {
                         have drawings for you to color and write messages on, to be distributed to
                         senior citizens, troops serving overseas, and many others.
                       </p>
-                      <a style={{ fontStyle: "italic" }}>
+                      <a style={{ fontStyle: 'italic' }}>
                         Wednesday, October 8th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
@@ -176,7 +171,7 @@ const RushPage = () => {
                         <b>We require all rushees to attend one additional event.</b>
                         Come join us for a casual session to speak with current brothers and learn more about our chapter!
                       </p> */}
-                      <a style={{ fontStyle: "italic" }}>
+                      <a style={{ fontStyle: 'italic' }}>
                         Thursday, October 9th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
