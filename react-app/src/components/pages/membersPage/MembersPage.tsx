@@ -79,17 +79,17 @@ const MembersPage = () => {
           <h2 className="text-center mb-5">Executive Board</h2>
           <div className="row justify-content-center">
             {[
-              { name: "Catherine Lu", role: "President", image: "Catherine_Lu.jpg" },
-              { name: "Spencer Dearman", role: "Vice President", image: "Spencer_Dearman.jpg" },
-              { name: "Quincy Leung", role: "Director of Engagement", image: "Quincy_Leung.jpg" },
-              { name: "Tiffany Cheng", role: "Director of Finance", image: "Tiffany_Cheng.jpg" },
-              { name: "Minseo Kim", role: "Director of Marketing", image: "Minseo_Kim.jpg" },
-              { name: "Guan Chen", role: "Co-Director of Membership", image: "Guan_Chen.jpg" },
-              { name: "Helen Tian", role: "Co-Director of Membership", image: "Helen_Tian.jpg" },
-              { name: "Fatima Madey", role: "Director of Outreach", image: "Fatima_Madey.jpg" },
-              { name: "Clarice Kim", role: "Co-Director of Professional Development", image: "Clarice_Kim.jpg" },
-              { name: "Arya Sapra", role: "Co-Director of Professional Development", image: "Arya_Sapra.jpg" },
-              { name: "John Rugemalila", role: "Director of Technology", image: "John_Rugemalila.jpg" },
+              { name: "Minseo Kim", role: "President", image: "Minseo_Kim.jpg" },
+              { name: "Quincy Leung", role: "Vice President", image: "Quincy_Leung.jpg" },
+              { name: "Caden Tebow", role: "Director of Engagement", image: "Caden_Tebow.jpg" },
+              { name: "Veronica Sokoloff", role: "Director of Finance", image: "Veronica_Sokoloff.jpg" },
+              { name: "Elena Loucks", role: "Director of Marketing", image: "Elena_Loucks.jpg" },
+              { name: "Adrian Dai", role: "Co-Director of Membership", image: "Adrian_Dai.jpg" },
+              { name: "Elizabeth Zhao", role: "Co-Director of Membership", image: "Elizabeth_Zhao.jpg" },
+              { name: "Isabella Ahuactzin", role: "Director of Outreach", image: "Isabella_Ahuactzin.jpg" },
+              { name: "Aeliya Grover", role: "Co-Director of Professional Development", image: "Aeliya_Grover.jpg" },
+              { name: "Eugenia Osei Bonsu", role: "Co-Director of Professional Development", image: "Eugenia_OseiBonsu.jpg" },
+              { name: "Paulina DePaulo", role: "Director of Technology", image: "Paulina_DePaulo.jpg" },
             ].map((member, index) => (
               <div key={index} className="col-4 col-md-3 col-lg-2 px-lg-3 text-center">
                 <img className="w-100 mb-2" src={`assets/img/members/${member.image}`} alt={member.name} />

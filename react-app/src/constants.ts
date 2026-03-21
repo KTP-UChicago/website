@@ -198,4 +198,49 @@ const theta = {
     ]
 }
 
-export const CLASSES = [founders, alpha, beta, gamma, delta, epsilon, zeta, eta, theta ]
+const iota = {
+    name: "Iota",
+    members: [
+        "Adrian Dai",
+        "Nam Nguyen",
+        "Maddy Tavel",
+        "David Conway",
+        "Yuna Otsuki",
+        "Kerry Zhou",
+        "Veronica Sokoloff",
+        "Vibhav Singh",
+        "Mia Aklufi",
+        "Noah Michel",
+        "Kacie Stoner",
+        "Isabella Ahuactzin",
+        "Shinyi Li",
+        "Alissa Cheong",
+        "Ryan Kotamraju",
+        "Nathan Lee"
+    ]
+}
+
+const kappa = {
+    name: "Kappa",
+    members: [
+        "Abraham Flores",
+        "Aeliya Grover",
+        "Brayden Miller",
+        "Alex Noh",
+        "Carmen de Vries",
+        "Andrew Cheng",
+        "Uma Malani",
+        "Calvin Lai",
+        "Antonia Tarfulea",
+        "Elena Wang",
+        "Elizabeth Zhao",
+        "Eugenia Osei Bonsu",
+        "Dante Vairus",
+        "Nhi Nguyen",
+        "Evie Hu",
+        "Oliver Wang",
+        "Aryan Kaushal"
+    ]
+}
+
+export const CLASSES = [founders, alpha, beta, gamma, delta, epsilon, zeta, eta, theta, iota, kappa ]
