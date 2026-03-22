@@ -73,16 +73,16 @@ const RushPage = () => {
         <div className="scroll" id="apply">
           <div className="row px-3 px-md-0">
             <h2 className="text-center mb-4">Rush KTP Spring 2026!</h2>
-            <img className="img-fluid" src="assets/img/rush/banner.png" alt="Rush" />
+            <img className="img-fluid" src="assets/img/rush/rushBanner26.jpg" alt="Rush" />
             <p style={{ textAlign: "center", paddingTop: 24 }}>
               We are excited to announce our Spring 2026 Rush Cycle. Check out our Instagram (
               <a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more about
-              KTP and our upcoming rush cycle.
-              {/* If you are curious about our Spring 2026 cycle, please fill out our interest form. */}
+              KTP and stay tuned for our Spring 2026 Application.
+              {/* Application Coming Soon! */}
             </p>
             <div style={{ textAlign: "center" }}>
-              <a href="http://tinyurl.com/f25application" className="btn-rush">
-                APPLY
+              <a className="btn-rush">
+                APPLICATION COMING SOON
               </a>
             </div>
           </div>
@@ -97,7 +97,7 @@ const RushPage = () => {
               <p style={{ textAlign: "center" }}>
                 We require all rushees to attend at least one info session and one other rush event.
                 If this isn't possible for you, reach out to one of our Substitute Co-Directors of
-                Membership, Alissa Cheong (<a href="mailto:amkc@uchicago.edu">amkc@uchicago.edu</a>)
+                Membership, Elizabeth Zhao (<a href="mailto:ezhao28@uchicago.edu">ezhao28@uchicago.edu</a>)
                 or Adrian Dai (<a href="mailto:daia@uchicago.edu">daia@uchicago.edu</a>).
               </p>
               <div className="cd-timeline js-cd-timeline">
@@ -112,13 +112,13 @@ const RushPage = () => {
                         <a href="https://www.facebook.com/events/2888397667981911/ ">Facebook Event Link (Please RSVP)</a>
                       </p> */}
                       <p>
-                        <b>We require all rushees to attend one info session.</b>
+                        <b>We require all rushees to attend one info session. </b>
                         They're a great opportunity for you to learn the basics about KTP, meet some
                         of our members, and decide if our community is one you’d like to become a
                         part of.
                       </p>
                       <a style={{ fontStyle: "italic" }}>
-                        Monday, October 6th | 8:00&#8211;9:00 PM | McCormick Lounge
+                        Monday, March 23rd | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -132,13 +132,13 @@ const RushPage = () => {
                         <a href="https://www.facebook.com/events/1210823223571552/">Facebook Event Link (Please RSVP)</a>
                       </p> */}
                       <p>
-                        <b>We require all rushees to attend one info session.</b>
+                        <b>We require all rushees to attend one info session. </b>
                         They're a great opportunity for you to learn the basics about KTP, meet some
                         of our members, and decide if our community is one you’d like to become a
                         part of.
                       </p>
                       <a style={{ fontStyle: "italic" }}>
-                        Tuesday, October 7th | 8:00&#8211;9:00 PM | McCormick Lounge
+                        Tuesday, March 24th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -152,13 +152,13 @@ const RushPage = () => {
                         <a href="https://www.facebook.com/events/505328835683278/">Facebook Event Link (Please RSVP)</a>
                       </p> */}
                       <p>
-                        <b>We require all rushees to attend one additional event.</b>
+                        <b>We require all rushees to attend one additional event. </b>
                         Contributing to the Color A Smile Charity with your fellow rushees. We will
                         have drawings for you to color and write messages on, to be distributed to
                         senior citizens, troops serving overseas, and many others.
                       </p>
                       <a style={{ fontStyle: "italic" }}>
-                        Wednesday, October 8th | 8:00&#8211;10:00 PM | McCormick Lounge
+                        Wednesday, March 25th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
@@ -167,16 +167,18 @@ const RushPage = () => {
                       <img src="assets/img/rush/pyramid.jpg" alt="" />
                     </div>
                     <div className="cd-timeline__content">
-                      <h4>Spotify Shuffle</h4>
+                      <h4>Drop A Pin</h4>
                       {/* <p>
                         <a href="https://www.facebook.com/events/421346050587491/">Facebook Event Link (Please RSVP)</a>
                       </p> */}
-                      {/* <p>
-                        <b>We require all rushees to attend one additional event.</b>
-                        Come join us for a casual session to speak with current brothers and learn more about our chapter!
-                      </p> */}
+                      <p>
+                        <b>We require all rushees to attend one additional event. </b>
+                        Join us for a speed dating-style event with brothers and rushees 
+                        where you can connect through questions about your favorite 
+                        places, memories, and more.
+                      </p>
                       <a style={{ fontStyle: "italic" }}>
-                        Thursday, October 9th | 8:00&#8211;10:00 PM | McCormick Lounge
+                        Thursday, March 26th | 8:00&#8211;10:00 PM | McCormick Lounge
                       </a>
                     </div>
                   </div>
