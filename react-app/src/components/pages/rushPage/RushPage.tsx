@@ -77,12 +77,12 @@ const RushPage = () => {
             <p style={{ textAlign: "center", paddingTop: 24 }}>
               We are excited to announce our Spring 2026 Rush Cycle. Check out our Instagram (
               <a href="https://www.instagram.com/uchicagoktp/">@uchicagoktp</a>) to learn more about
-              KTP and stay tuned for our Spring 2026 Application.
+              KTP. Our application is now live!
               {/* Application Coming Soon! */}
             </p>
             <div style={{ textAlign: "center" }}>
-              <a className="btn-rush">
-                APPLICATION COMING SOON
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyivhHCBm7Ppl6CdYoArWzMlOzOGtbwJRfyHVYugVPuQ1svQ/viewform" className="btn-rush">
+                APPLY
               </a>
             </div>
           </div>
