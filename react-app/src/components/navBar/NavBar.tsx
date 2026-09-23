@@ -1,112 +1,144 @@
-import {useState} from 'react';
-import ModalBase from '../core/modalBase/ModalBase';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { PRIMARY_NAV, SITE } from '../../content/siteConfig';
+import { RUSH_CONFIG } from '../../content/rushContent';
 import { useAuthentication } from '../../contexts/AuthenticationContext';
+import { useScrollNav } from '../../hooks/useScrollNav/useScrollNav';
+import Button from '../ui/Button';
 
-function NavBar({page} : {page: string}) {
-  const {user, handleLogin, handleLogout} = useAuthentication();
-    const returnActiveIfCurrent = (currentPage: string) => {
-        return page === currentPage ? "active" : "";
-    }
-    const [isHovered, setIsHovered] = useState(false);
-    const hoverStyle = {
-      cursor: isHovered ? 'pointer' : 'default',
+const LOGO_FALLBACK = 'assets/img/ktp-logo.png';
+
+function NavBar({ page }: { page: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const dockRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const { user, handleLogin, handleLogout } = useAuthentication();
+  const { isAtTop } = useScrollNav();
+  const isHome = location.pathname === '/' || page === 'home';
+  const navIsExpanded = expanded || !isHome;
+
+  const isActive = (pageKey: string) => page === pageKey;
+  const closeNav = () => setExpanded(false);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!expanded) return undefined;
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (dockRef.current && !dockRef.current.contains(event.target as Node)) {
+        setExpanded(false);
+      }
     };
 
-    const [signInOpen, setSignInOpen] = useState(false);
+    document.addEventListener('mousedown', handlePointerDown);
+    return () => document.removeEventListener('mousedown', handlePointerDown);
+  }, [expanded]);
+
+  useEffect(() => {
+    document.body.style.overflow = expanded && window.innerWidth < 768 ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [expanded]);
+
+  const navClasses = [
+    'ktp-nav',
+    'ktp-nav--dock',
+    isHome ? 'ktp-nav--home' : '',
+    isHome && isAtTop ? 'ktp-nav--transparent' : 'ktp-nav--solid',
+    navIsExpanded ? 'ktp-nav--expanded' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const handleLogoError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    event.currentTarget.src = LOGO_FALLBACK;
+  };
+
   return (
-    <>
-    <ModalBase open={signInOpen} handleClose={() => setSignInOpen(false)}>
-      <h1 style={{textAlign: "center"}}>Member portal in progress</h1>
-      </ModalBase>
-    <nav className="navbar navbar-expand-lg shadow-lg sticky-top">
-      <div className="container-fluid mx-md-5">
+    <header className={navClasses}>
+      <div className="ktp-nav__dock" ref={dockRef}>
         <button
-          className="navbar-toggler ms-auto"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          className="ktp-nav__trigger"
+          aria-label={navIsExpanded ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={navIsExpanded}
+          aria-controls="ktp-nav-panel"
+          onClick={() => setExpanded((open) => !open)}
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="ktp-nav__trigger-bars" aria-hidden="true">
+            <span className={`ktp-nav__toggle-bar ${expanded ? 'ktp-nav__toggle-bar--open' : ''}`} />
+            <span className={`ktp-nav__toggle-bar ${expanded ? 'ktp-nav__toggle-bar--hidden' : ''}`} />
+            <span className={`ktp-nav__toggle-bar ${expanded ? 'ktp-nav__toggle-bar--open' : ''}`} />
+          </span>
+          <img
+            src={SITE.logoPath}
+            alt=""
+            className="ktp-nav__trigger-logo"
+            width={28}
+            height={28}
+            onError={handleLogoError}
+          />
         </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item mx-3">
-              <Link className={`nav-link ${returnActiveIfCurrent("home")}`} to="/">Home</Link>
-            </li>
-            <li className="nav-item mx-3">
-            <Link className={`nav-link ${returnActiveIfCurrent("about")}`} to="/about">About</Link>
-              {/* <a className={`nav-link ${returnActiveIfCurrent("about")}`} href="about">About Us</a> */}
-            </li>
-            <li className="nav-item mx-3 dropdown">
-              
-              <Link onClick={() => {window.location.href = "/#/rush"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("rush")}`}  to="/rush" id="rushDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Rush
+
+        <nav
+          id="ktp-nav-panel"
+          className="ktp-nav__panel"
+          aria-label="Main navigation"
+        >
+          <ul className="ktp-nav__links">
+            <li>
+              <Link
+                to="/"
+                className={`ktp-nav__link ${isHome ? 'ktp-nav__link--active' : ''}`}
+                onClick={closeNav}
+              >
+                Home
               </Link>
-              <ul className="dropdown-menu" aria-labelledby="rushDropdown">
-                <li><Link className="dropdown-item" to="/rush#apply">Apply</Link></li>
-                <li><Link className="dropdown-item" to="/rush#events">Events</Link></li>
-                <li><Link className="dropdown-item" to="/rush#faq">FAQ</Link></li>
-              </ul>
             </li>
-            {/* Uncomment this area when there are workshops */}
-            <li className="nav-item mx-3 dropdown">
-              <Link onClick={() => {window.location.href = "/#/workshops"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("workshops")}`} to="/workshops" id="workshopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Workshops
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="workshopDropdown">
-                <li><Link className="dropdown-item" to="/workshops#rsvp">RSVP</Link></li>
-                <li><Link className="dropdown-item" to="/workshops#events">Events</Link></li>
-              </ul>
-            </li>
-            <li className="nav-item mx-3 dropdown">
-              <Link onClick={() => {window.location.href = "/#/members"}} className={`nav-link dropdown-toggle ${returnActiveIfCurrent("members")}`} to="/members" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Members
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="membersDropdown">
-                <li><Link className="dropdown-item" to="/members#eboard">E-Board</Link></li>
-                <li><Link className="dropdown-item" to="/members#actives">Actives</Link></li>
-                <li><Link className="dropdown-item" to="/members#alumni">Alumni</Link></li>
-              </ul>
-            </li>
-            <li className="nav-item mx-3 dropdown">
-              <Link className={`nav-link dropdown-toggle`} to="/workshops" id="memberPortalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Member Portal
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="memberPortalDropdown">
-                <li> <Link className="dropdown-item" to="/alumni-database">Alumni Database</Link></li>
-                <li><Link className="dropdown-item" to="/course-reviews">Course Reviews</Link></li>
-                <li><Link className="dropdown-item" to="/member-directory">Member Directory</Link></li>
-              </ul>
-            </li>
-            <li className="nav-item mx-3">
-              <Link className={`nav-link ${returnActiveIfCurrent("contact")}`} to="/contact">Contact Us</Link>
-            </li>
-            
-            {
-              user ? <li className="nav-item mx-3" onClick={handleLogout}
-              style={hoverStyle}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-                <a className="nav-link" >Sign Out</a>
-            </li>
-            : <li className="nav-item mx-3" onClick={handleLogin}
-            style={hoverStyle}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-              <a className="nav-link" >Sign In</a>
-          </li>
-            }
+            {PRIMARY_NAV.filter((item) => item.pageKey !== 'rush').map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`ktp-nav__link ${isActive(item.pageKey) ? 'ktp-nav__link--active' : ''}`}
+                  onClick={closeNav}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
+
+          <div className="ktp-nav__cta">
+            <button
+              type="button"
+              className="ktp-nav__link ktp-nav__auth"
+              onClick={() => {
+                closeNav();
+                if (user) {
+                  handleLogout();
+                } else {
+                  handleLogin();
+                }
+              }}
+            >
+              {user ? 'Sign Out' : 'Sign In'}
+            </button>
+            <Button
+              variant={RUSH_CONFIG.status === 'open' ? 'primary' : 'secondary'}
+              href="/rush"
+              onClick={closeNav}
+            >
+              Rush KTP
+            </Button>
+          </div>
+        </nav>
       </div>
-    </nav>
-    </>
+    </header>
   );
 }
+
 export default NavBar;

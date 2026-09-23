@@ -51,8 +51,8 @@ function CourseReviewsPage() {
     };
 
     return <PageTemplate page="course-reviews">
-        <div className="container pt-5">
-        <h2 className="text-center mb-5">Course Reviews</h2>
+        <div className="ktp-container ktp-portal-page">
+        <h2>Course Reviews</h2>
         {user ? 
         
         <>
@@ -77,7 +77,7 @@ function CourseReviewsPage() {
         </>
          : <>
           <h1>Access Denied</h1>
-          <p>Please  <a style={{color: "blue", cursor:"pointer"}} onClick={handleLogin}>log in</a>  to view the course reviews page.</p>
+          <p>Please <button type="button" className="ktp-btn ktp-btn--secondary" onClick={handleLogin}>log in</button> to view the course reviews page.</p>
           </>
     }
          
