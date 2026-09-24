@@ -1,14 +1,14 @@
 export type RushStatus = 'open' | 'interest' | 'closed';
 
 export const RUSH_CONFIG = {
-  status: 'open' as RushStatus,
-  season: 'Spring 2026',
+  status: 'closed' as RushStatus,
+  season: 'Fall 2026',
+  applicationCtaLabel: 'Application coming soon',
   applyUrl:
     'https://docs.google.com/forms/d/e/1FAIpQLSfyivhHCBm7Ppl6CdYoArWzMlOzOGtbwJRfyHVYugVPuQ1svQ/viewform',
   interestUrl: undefined as string | undefined,
-  bannerImage: 'assets/img/community/full-chapter-hero.jpg',
-  communityImage: 'assets/img/rush/group-social.png',
-  communityImageAlt: 'KTP members celebrating together at a social event',
+  heroImage: 'assets/img/rush/group-social.png',
+  heroImageAlt: 'KTP members celebrating together at a social event',
   contacts: [
     { name: 'Elizabeth Zhao', role: 'Co-Director of Membership', email: 'ezhao28@uchicago.edu' },
     { name: 'Adrian Dai', role: 'Co-Director of Membership', email: 'daia@uchicago.edu' },
@@ -23,34 +23,22 @@ export const RUSH_THEME = {
       "Meet the chapter, learn what we do, and see if KTP is the community you've been charting a course toward.",
   },
   sections: {
-    about: {
-      index: '01',
-      eyebrow: 'The destination',
-      title: 'What is KTP?',
-      body:
-        'Kappa Theta Pi is UChicago\'s professional technology fraternity. We bring together students passionate about technology — engineers, designers, founders, researchers, and more — in a close-knit, community-driven organization.',
-    },
     events: {
-      index: '02',
+      index: '01',
       eyebrow: 'The route',
       title: 'Your stops this season',
     },
     faq: {
-      index: '03',
-      eyebrow: 'Navigate',
-      title: 'Chart your course',
+      index: '02',
+      eyebrow: 'Questions',
+      title: 'FAQ',
     },
   },
   cta: {
     headline: 'Ready to embark?',
     subheadline: (season: string) =>
-      `Applications for ${season} are open. Take the next leg of your journey.`,
+      `Applications for ${season} will be posted soon. Check back for updates.`,
   },
-  highlights: [
-    'All majors welcome — no CS required',
-    'Attend one info session + one other event to complete your route',
-    'Meet the crew and see if KTP is your port of call',
-  ],
 } as const;
 
 export type RushEvent = {
@@ -73,9 +61,9 @@ export const RUSH_EVENTS: RushEvent[] = [
     tagline: 'Drop anchor and learn the basics',
     description:
       "Learn the basics about KTP, meet members, and decide if our community is one you'd like to join. All rushees must attend one info session.",
-    date: 'Monday, March 23',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'TBD',
     image: 'assets/img/community/lounge-social.jpg',
     imageAlt: 'KTP members at an info session',
     required: 'info',
@@ -86,9 +74,9 @@ export const RUSH_EVENTS: RushEvent[] = [
     tagline: 'Drop anchor and learn the basics',
     description:
       'A second opportunity to learn about KTP and meet the chapter. All rushees must attend one info session.',
-    date: 'Tuesday, March 24',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'TBD',
     image: 'assets/img/community/formal-group.jpg',
     imageAlt: 'KTP rush event',
     required: 'info',
@@ -99,25 +87,37 @@ export const RUSH_EVENTS: RushEvent[] = [
     tagline: 'Give back before you go further',
     description:
       'Contribute to the Color A Smile charity with fellow rushees. We will color drawings and write messages to be distributed to senior citizens, troops, and others.',
-    date: 'Wednesday, March 25',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'TBD',
     image: 'assets/img/community/pledge-formal.jpg',
     imageAlt: 'KTP charity rush event',
     required: 'additional',
   },
   {
-    id: 'drop-a-pin',
-    title: 'Drop A Pin',
-    tagline: 'Plot your coordinates with the chapter',
+    id: 'drop-an-anchor',
+    title: 'Drop An Anchor',
+    tagline: 'Stay awhile and connect with the chapter',
     description:
       'A speed dating-style event where brothers and rushees connect through questions about favorite places, memories, and more.',
-    date: 'Thursday, March 26',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'TBD',
     image: 'assets/img/community/dj-social.jpg',
-    imageAlt: 'KTP members at Drop A Pin',
+    imageAlt: 'KTP members at Drop An Anchor',
     required: 'additional',
+  },
+  {
+    id: 'applications-due',
+    title: 'Applications Due',
+    tagline: 'Submit before you set sail',
+    description:
+      'Submit your rush application by the deadline to be considered for membership.',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'TBD',
+    image: 'assets/img/community/lounge-social.jpg',
+    imageAlt: 'KTP rush applications',
   },
 ];
 

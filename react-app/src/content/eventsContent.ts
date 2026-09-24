@@ -1,3 +1,29 @@
+export const EVENTS_SECTIONS = {
+  upcoming: {
+    eyebrow: 'Upcoming',
+    title: 'What\'s coming up',
+    emptyMessage: '2026 Fall Rush events to be posted soon.',
+    fallRushNote: '2026 Fall Rush events to be posted soon.',
+  },
+  past: {
+    eyebrow: 'Archive',
+    title: 'Past Programming — Unlock Your Tech Potential',
+    description:
+      'Workshops, panels, and recruiting events from the chapter’s professional development series.',
+  },
+} as const;
+
+export const EVENTS_FEATURE_PHOTOS = [
+  {
+    src: 'assets/img/events/uytp-panel.jpg',
+    alt: 'KTP members at a chapter programming event in Stuart Hall',
+  },
+  {
+    src: 'assets/img/events/uytp-social.jpg',
+    alt: 'KTP members connecting at a chapter social',
+  },
+] as const;
+
 export type ChapterEvent = {
   id: string;
   title: string;
@@ -7,64 +33,36 @@ export type ChapterEvent = {
   location: string;
   image: string;
   imageAlt: string;
-  category: 'rush' | 'workshop' | 'professional';
+  category: 'rush' | 'workshop' | 'professional' | 'hackathon';
   season: string;
   isPast: boolean;
+  registerUrl?: string;
+  highlights?: readonly string[];
+  visual?: 'hackathon';
 };
 
 export const CHAPTER_EVENTS: ChapterEvent[] = [
   {
-    id: 'rush-info-1',
-    title: 'Rush Info Session 1',
+    id: 'hackdays-2026',
+    title: 'UChicago KTP Hackdays 2026',
     description:
-      'Learn about KTP, meet members, and explore whether our community is the right fit.',
-    date: 'Monday, March 23',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
-    image: 'assets/img/rush/guysattable.jpg',
-    imageAlt: 'KTP members at an info session',
-    category: 'rush',
-    season: 'Spring 2026',
+      'Build anything you want in a campus mini hackathon powered by MLH and Google. Prototype with large language models and modern tech tools—whether you\'re a seasoned hacker or completely new to hackathons.',
+    highlights: [
+      'Free lunch and refreshments throughout the day',
+      'MLH swag and prizes',
+      'Build with LLMs and modern tech tools',
+      'Connect with fellow tech enthusiasts from across campus',
+    ],
+    date: 'Saturday, February 28',
+    time: '10:30 AM–6:30 PM',
+    location: 'CSIL 4, John Crerar Library',
+    image: '',
+    imageAlt: '',
+    category: 'hackathon',
+    season: 'Winter 2026',
     isPast: false,
-  },
-  {
-    id: 'rush-info-2',
-    title: 'Rush Info Session 2',
-    description: 'A second opportunity to learn about KTP and meet the chapter.',
-    date: 'Tuesday, March 24',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
-    image: 'assets/img/rush/BidNight.jpg',
-    imageAlt: 'KTP rush event',
-    category: 'rush',
-    season: 'Spring 2026',
-    isPast: false,
-  },
-  {
-    id: 'rush-charity',
-    title: 'Charity Event for Color a Smile',
-    description: 'Color drawings and write messages for senior citizens, troops, and others.',
-    date: 'Wednesday, March 25',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
-    image: 'assets/img/rush/point.jpg',
-    imageAlt: 'KTP charity rush event',
-    category: 'rush',
-    season: 'Spring 2026',
-    isPast: false,
-  },
-  {
-    id: 'rush-drop-a-pin',
-    title: 'Drop A Pin',
-    description: 'Speed dating-style event connecting brothers and rushees.',
-    date: 'Thursday, March 26',
-    time: '8:00–10:00 PM',
-    location: 'McCormick Lounge',
-    image: 'assets/img/rush/pyramid.jpg',
-    imageAlt: 'KTP members at Drop A Pin',
-    category: 'rush',
-    season: 'Spring 2026',
-    isPast: false,
+    visual: 'hackathon',
+    registerUrl: 'https://uchicago-ktp-hackdays-2026.devpost.com',
   },
   {
     id: 'uytp-recruiting-2026',
@@ -74,8 +72,8 @@ export const CHAPTER_EVENTS: ChapterEvent[] = [
     date: 'Thursday, February 12',
     time: '8:00–10:00 PM',
     location: 'McCormick Lounge',
-    image: 'assets/img/community/lounge-social.jpg',
-    imageAlt: 'KTP members gathered in the lounge',
+    image: 'assets/img/events/uytp-social.jpg',
+    imageAlt: 'KTP members at a UYTP programming event',
     category: 'workshop',
     season: 'Winter 2026',
     isPast: true,
@@ -88,8 +86,8 @@ export const CHAPTER_EVENTS: ChapterEvent[] = [
     date: 'Tuesday, February 17',
     time: '8:00–10:00 PM',
     location: 'Stuart 105',
-    image: 'assets/img/workshops/sf.jpg',
-    imageAlt: 'KTP industry panel discussion',
+    image: 'assets/img/events/uytp-panel.jpg',
+    imageAlt: 'KTP industry panel discussion in Stuart Hall',
     category: 'workshop',
     season: 'Winter 2026',
     isPast: true,

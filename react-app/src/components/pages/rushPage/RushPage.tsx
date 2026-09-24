@@ -13,24 +13,6 @@ import {
 } from '../../../content/rushContent';
 import useNavigateToId from '../../../hooks/useNavigateToId/useNavigateToId';
 
-const COMPASS_ROSE = (
-  <svg
-    className="ktp-rush-hero__compass"
-    viewBox="0 0 120 120"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <circle cx="60" cy="60" r="54" stroke="currentColor" strokeWidth="1" opacity="0.35" />
-    <circle cx="60" cy="60" r="38" stroke="currentColor" strokeWidth="1" opacity="0.25" />
-    <path d="M60 8 L64 52 L60 60 L56 52 Z" fill="currentColor" opacity="0.5" />
-    <path d="M60 112 L56 68 L60 60 L64 68 Z" fill="currentColor" opacity="0.3" />
-    <path d="M8 60 L52 56 L60 60 L52 64 Z" fill="currentColor" opacity="0.3" />
-    <path d="M112 60 L68 64 L60 60 L68 56 Z" fill="currentColor" opacity="0.3" />
-    <circle cx="60" cy="60" r="4" fill="currentColor" opacity="0.6" />
-  </svg>
-);
-
 const HERO_WAVES = (
   <svg
     className="ktp-rush-hero__waves"
@@ -48,54 +30,38 @@ const HERO_WAVES = (
 
 const RushPage = () => {
   useNavigateToId();
-  const { status, season, applyUrl, bannerImage, communityImage, communityImageAlt, contacts } =
+  const { status, season, applyUrl, applicationCtaLabel, heroImage, heroImageAlt, contacts } =
     RUSH_CONFIG;
-  const { hero, sections, cta, highlights } = RUSH_THEME;
+  const { hero, sections, cta } = RUSH_THEME;
+  const applicationsOpen = status === 'open' && applyUrl;
 
   return (
     <PageTemplate page="rush">
       <div className="ktp-rush-page">
-        <section
-          className="ktp-page-hero ktp-page-hero--voyage"
-          style={{ backgroundImage: `url(${bannerImage})` }}
-        >
-          <div className="ktp-page-hero__overlay ktp-page-hero__overlay--voyage" />
-          {COMPASS_ROSE}
-          <div className="ktp-container ktp-page-hero__content">
-            <p className="ktp-eyebrow">{hero.eyebrow(season)}</p>
-            <h1>{hero.headline}</h1>
-            <p>{hero.subheadline}</p>
-            {status === 'open' && applyUrl && (
-              <div className="ktp-btn-group" style={{ marginTop: 'var(--space-lg)' }}>
-                <Button variant="primary" href={applyUrl} external>
-                  Apply Now
-                </Button>
+        <section className="ktp-rush-hero">
+          <div className="ktp-container ktp-rush-hero__grid">
+            <div className="ktp-rush-hero__content">
+              <p className="ktp-eyebrow">{hero.eyebrow(season)}</p>
+              <h1>{hero.headline}</h1>
+              <p>{hero.subheadline}</p>
+              <div className="ktp-btn-group ktp-rush-hero__actions">
+                {applicationsOpen ? (
+                  <Button variant="primary" href={applyUrl} external>
+                    Apply Now
+                  </Button>
+                ) : (
+                  <span className="ktp-btn ktp-btn--primary ktp-btn--disabled">
+                    {applicationCtaLabel}
+                  </span>
+                )}
               </div>
-            )}
+            </div>
+            <figure className="ktp-rush-hero__photo">
+              <img src={heroImage} alt={heroImageAlt} loading="eager" />
+            </figure>
           </div>
           {HERO_WAVES}
         </section>
-
-        <Section id="apply">
-          <div className="ktp-split">
-            <div>
-              <SectionHeader
-                index={sections.about.index}
-                eyebrow={sections.about.eyebrow}
-                title={sections.about.title}
-              />
-              <ul className="ktp-rush-highlights ktp-rush-highlights--voyage">
-                {highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p>{sections.about.body}</p>
-            </div>
-            <div className="ktp-split__image">
-              <img src={communityImage} alt={communityImageAlt} loading="lazy" />
-            </div>
-          </div>
-        </Section>
 
         <SectionDivider variant="wave" />
 
@@ -115,22 +81,21 @@ const RushPage = () => {
               </span>
             ))}
           </p>
-          <div className="ktp-timeline ktp-timeline--voyage">
-            {RUSH_EVENTS.map((event) => (
-              <div key={event.id} className="ktp-timeline__item ktp-timeline__item--with-image">
-                <img
-                  src={event.image}
-                  alt={event.imageAlt}
-                  className="ktp-timeline__thumb"
-                  loading="lazy"
-                />
-                <div>
+          <div className="ktp-timeline ktp-timeline--alternating">
+            {RUSH_EVENTS.map((event, index) => (
+              <div
+                key={event.id}
+                className={`ktp-timeline__item ${
+                  index % 2 === 0 ? 'ktp-timeline__item--left' : 'ktp-timeline__item--right'
+                }`}
+              >
+                <div className="ktp-timeline__card">
                   <h3>{event.title}</h3>
                   {event.tagline && <p className="ktp-timeline__tagline">{event.tagline}</p>}
                   <p className="ktp-timeline__meta">
                     {event.date} · {event.time} · {event.location}
                   </p>
-                  <p>{event.description}</p>
+                  <p className="ktp-timeline__description">{event.description}</p>
                 </div>
               </div>
             ))}
@@ -153,20 +118,27 @@ const RushPage = () => {
           ))}
         </Section>
 
-        {status === 'open' && applyUrl && (
-          <>
-            <SectionDivider variant="wave" />
-            <Section variant="dark" className="ktp-section--rush-embark">
-              <div className="ktp-rush-cta ktp-rush-cta--embark">
-                <h2>{cta.headline}</h2>
-                <p>{cta.subheadline(season)}</p>
+        <SectionDivider variant="wave" />
+        <Section variant="dark" className="ktp-section--rush-embark">
+          <div className="ktp-rush-embark">
+            <div className="ktp-rush-embark__copy">
+              <p className="ktp-rush-embark__eyebrow">{season}</p>
+              <h2>{cta.headline}</h2>
+              <p>{cta.subheadline(season)}</p>
+            </div>
+            <div className="ktp-rush-embark__actions">
+              {applicationsOpen ? (
                 <Button variant="primary" href={applyUrl} external>
                   Apply Now
                 </Button>
-              </div>
-            </Section>
-          </>
-        )}
+              ) : (
+                <span className="ktp-btn ktp-btn--primary ktp-btn--disabled">
+                  {applicationCtaLabel}
+                </span>
+              )}
+            </div>
+          </div>
+        </Section>
       </div>
     </PageTemplate>
   );

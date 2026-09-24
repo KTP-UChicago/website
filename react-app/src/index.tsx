@@ -10,6 +10,7 @@ import EventsPage from './components/pages/eventsPage/EventsPage';
 import MembersPage from './components/pages/membersPage/MembersPage';
 import ContactPage from './components/pages/contactPage/ContactPage';
 import RedirectToHash from './components/redirectToHash/RedirecToHash';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import { FirebaseProvider } from './contexts/FirebaseContext';
 import { AuthenticationContextProvider } from './contexts/AuthenticationContext';
 import AlumniDatabasePage from './components/pages/alumniDatabasePage/AlumniDatabasePage';
@@ -23,6 +24,7 @@ root.render(
     <FirebaseProvider>
       <AuthenticationContextProvider>
         <HashRouter>
+          <ScrollToTop />
           <RedirectToHash />
           <Routes>
             <Route path="/" element={<HomePage />} />

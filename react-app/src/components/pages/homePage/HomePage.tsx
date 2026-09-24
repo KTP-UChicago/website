@@ -61,9 +61,7 @@ const HomePage = () => {
     };
   }, []);
 
-  const featuredEvents = CHAPTER_EVENTS.filter((e) => !e.isPast).slice(0, 4);
-  const pastEvents = CHAPTER_EVENTS.filter((e) => e.isPast).slice(0, 2);
-  const displayEvents = featuredEvents.length > 0 ? featuredEvents : pastEvents;
+  const upcomingEvents = CHAPTER_EVENTS.filter((e) => !e.isPast);
 
   return (
     <PageTemplate page="home">
@@ -165,34 +163,22 @@ const HomePage = () => {
 
       {/* Events */}
       <Section variant="alt">
-        <div className="ktp-section-split">
-          <div className="ktp-section-split__content">
-            <SectionHeader
-              index="02"
-              eyebrow={HOME_SECTIONS.events.eyebrow}
-              title={HOME_SECTIONS.events.title}
-              description={HOME_SECTIONS.events.description}
-            />
-            <div className="ktp-events-grid">
-              {displayEvents.slice(0, 4).map((event) => (
-                <EventCard key={event.id} {...event} season={event.season} />
-              ))}
-            </div>
-            <div style={{ marginTop: 'var(--space-xl)' }}>
-              <Button variant="secondary" href="/events">
-                View all events
-              </Button>
-            </div>
-          </div>
-          <div className="ktp-section-split__media">
-            <img
-              src={displayEvents[0]?.image || 'assets/img/rush/guysattable.jpg'}
-              alt="KTP event"
-              loading="lazy"
-            />
-            <p className="ktp-section-split__caption">
-              {featuredEvents.length > 0 ? 'Spring 2026 programming' : 'Recent chapter programming'}
-            </p>
+        <SectionHeader
+          index="02"
+          eyebrow={HOME_SECTIONS.events.eyebrow}
+          title={HOME_SECTIONS.events.title}
+          description={HOME_SECTIONS.events.description}
+        />
+        <div className="ktp-home-events">
+          {upcomingEvents.map((event) => (
+            <EventCard key={event.id} {...event} variant="featured" />
+          ))}
+          <p className="ktp-events-upcoming__note">{HOME_SECTIONS.events.fallRushNote}</p>
+
+          <div className="ktp-home-events__actions">
+            <Button variant="secondary" href="/events">
+              View all events
+            </Button>
           </div>
         </div>
       </Section>

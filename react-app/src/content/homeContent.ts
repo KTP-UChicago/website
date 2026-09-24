@@ -1,5 +1,5 @@
 export const HOME_HERO = {
-  headline: 'Technology is better when you build it together.',
+  headline: 'Technology brings us together.',
   subheadline:
     'Kappa Theta Pi is UChicago\'s professional technology fraternity — a community of engineers, designers, founders, researchers, and technologists learning and building together.',
   primaryCta: { label: 'Explore KTP', href: '/about' },
@@ -41,9 +41,10 @@ export const HOME_PILLARS = [
 
 export const HOME_SECTIONS = {
   events: {
-    eyebrow: 'Recent programming',
-    title: 'What we\'ve been doing',
-    description: 'Rush events, workshops, and professional programming from the chapter.',
+    eyebrow: 'Programming',
+    title: 'What\'s coming up',
+    description: 'Hackathons, rush events, and professional programming from the chapter.',
+    fallRushNote: 'Fall Rush is starting soon — events will be posted here as they\'re announced.',
   },
   people: {
     eyebrow: 'The chapter',

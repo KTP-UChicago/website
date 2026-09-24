@@ -23,7 +23,7 @@ const renderHome = () =>
 test('renders homepage hero headline', () => {
   renderHome();
   expect(
-    screen.getByText(/Technology is better when you build it together/i)
+    screen.getByText(/Technology brings us together/i)
   ).toBeInTheDocument();
 });
 
