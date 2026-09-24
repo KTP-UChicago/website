@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PageTemplate from '../../core/pageTemplate/PageTemplate';
-import { Slide } from '@mui/material';
-import SliderCarousel from './SliderCarousel';
-import { LinkedIn } from '@mui/icons-material';
-import { CLASSES } from '../../../constants';
-import ClassDisplay from './ClassDisplay';
+import Section from '../../ui/Section';
+import SectionHeader from '../../ui/SectionHeader';
+import SectionDivider from '../../ui/SectionDivider';
 import MemberCard from '../../memberCard/MemberCard';
+import { CLASSES } from '../../../constants';
+import { EXECUTIVE_BOARD } from '../../../content/leadership';
+import { COMPANY_LOGOS } from '../../../content/companies';
+import ClassDisplay from './ClassDisplay';
 import useNavigateToId from '../../../hooks/useNavigateToId/useNavigateToId';
 
-// Define a type for the member data
 export interface Member {
   name: string;
   image: string;
@@ -17,131 +18,129 @@ export interface Member {
   linkedin: string;
 }
 
-// Component for the eboard and members page
 const MembersPage = () => {
   const [members, setMembers] = useState<Member[]>([]);
+  const [search, setSearch] = useState('');
   useNavigateToId();
+
   useEffect(() => {
-    // Function to load CSV data
-    const loadFile = async (filePath: string): Promise<string> => {
-      const response = await fetch(filePath);
-      if (response.ok) {
-        return response.text();
-      } else {
-        throw new Error('Failed to load CSV file');
-      }
-    };
-
-    // Load and process the CSV file
-    const processCSV = async () => {
+    const loadMembers = async () => {
       try {
-        const csv = await loadFile("assets/memberList.csv");
-        const rows = csv.split("\n").slice(1, -1);
-        const sortedRows = rows.sort((rowA, rowB) => {
-          const a = rowA.split(",")[1].toLowerCase();
-          const b = rowB.split(",")[1].toLowerCase();
-          return a.localeCompare(b);
+        const response = await fetch('assets/memberList.csv');
+        if (!response.ok) return;
+        const csv = await response.text();
+        const rows = csv.split('\n').slice(1).filter((row) => row.trim().length > 0);
+        const sorted = rows.sort((a, b) => {
+          const lastA = a.split(',')[1]?.toLowerCase() || '';
+          const lastB = b.split(',')[1]?.toLowerCase() || '';
+          return lastA.localeCompare(lastB);
         });
 
-        const memberList = sortedRows.map(row => {
-          const [firstName, lastName, image, pledgeClass, gradYear, linkedin] = row.split(",");
-          return {
-            name: `${firstName} ${lastName}`,
-            image: `assets/img/members/${image}`,
-            pledgeClass,
-            gradYear,
-            linkedin,
-          };
-        });
-
-        setMembers(memberList);
+        setMembers(
+          sorted.map((row) => {
+            const [firstName, lastName, image, pledgeClass, gradYear, linkedin] = row.split(',');
+            return {
+              name: `${firstName} ${lastName}`,
+              image: `assets/img/members/${image}`,
+              pledgeClass,
+              gradYear,
+              linkedin,
+            };
+          })
+        );
       } catch (error) {
-        console.error('Error processing CSV:', error);
+        console.error('Error loading members:', error);
       }
     };
 
-    processCSV();
-    const script = document.createElement('script');
-    script.src = "assets/js/lightslider.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
+    loadMembers();
   }, []);
 
+  const filteredMembers = members.filter((m) =>
+    m.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <PageTemplate page="members">
-          <div className="container py-5">
-        <div className="scroll" id="eboard">
-          <h2 className="text-center mb-5">Executive Board</h2>
-          <div className="row justify-content-center">
-            {[
-              { name: "Minseo Kim", role: "President", image: "Minseo_Kim.jpg" },
-              { name: "Quincy Leung", role: "Vice President", image: "Quincy_Leung.jpg" },
-              { name: "Caden Tebow", role: "Director of Engagement", image: "Caden_Tebow.jpg" },
-              { name: "Veronica Sokoloff", role: "Director of Finance", image: "Veronica_Sokoloff.jpg" },
-              { name: "Elena Loucks", role: "Director of Marketing", image: "Elena_Loucks.jpg" },
-              { name: "Adrian Dai", role: "Co-Director of Membership", image: "Adrian_Dai.jpg" },
-              { name: "Elizabeth Zhao", role: "Co-Director of Membership", image: "Elizabeth_Zhao.jpg" },
-              { name: "Isabella Ahuactzin", role: "Director of Outreach", image: "Isabella_Ahuactzin.jpg" },
-              { name: "Aeliya Grover", role: "Co-Director of Professional Development", image: "Aeliya_Grover.jpg" },
-              { name: "Eugenia Osei Bonsu", role: "Co-Director of Professional Development", image: "Eugenia_OseiBonsu.jpg" },
-              { name: "Paulina DePaulo", role: "Director of Technology", image: "Paulina_DePaulo.jpg" },
-            ].map((member, index) => (
-              <div key={index} className="col-4 col-md-3 col-lg-2 px-lg-3 text-center">
-                <img className="w-100 mb-2" src={`assets/img/members/${member.image}`} alt={member.name} />
-                <h2 className="eboard-name mb-0">{member.name}</h2>
-                <p>{member.role}</p>
-              </div>
-            ))}
-          </div>
+    <PageTemplate page="people">
+      <section className="ktp-page-hero ktp-page-hero--short ktp-page-hero--solid">
+        <div className="ktp-container ktp-page-hero__content">
+          <p className="ktp-eyebrow">The chapter</p>
+          <h1>Meet the people behind KTP.</h1>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-gray">
-        <div className="container py-5" id="memberContainer">
-          <div className="scroll" id="actives">
-            <h2 className="text-center mb-5">Active Members</h2>
-            <div className="row" id="memberRow">
-              {members.map((member, index) => (
-               <MemberCard
-                key={index}
-                member={member}
-               />
-              ))}
+      <Section id="eboard">
+        <SectionHeader
+          index="01"
+          eyebrow="Leadership"
+          title="Executive Board"
+          description="The team that keeps KTP running."
+        />
+        <div className="ktp-people-grid ktp-people-grid--eboard">
+          {EXECUTIVE_BOARD.map((leader) => (
+            <div key={leader.name} className="ktp-person-card ktp-person-card--eboard">
+              <img
+                className="ktp-person-card__image"
+                src={`assets/img/members/${leader.image}`}
+                alt={leader.name}
+                loading="lazy"
+              />
+              <p className="ktp-person-card__name">{leader.name}</p>
+              <p className="ktp-person-card__role">{leader.role}</p>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="container py-5">
-        <div className="scroll" id="alumni">
-          <div className="row">
-            <h2 className="text-center mb-4">Alumni</h2>
-            <p>
-              Kappa Theta Pi has an extensive alumni network working at companies across the country.
-              We are proud to support our esteemed alumni and thank them for their continuing, and
-              lifelong, contributions to the KTP community.
-            </p>
-          </div>
+      <SectionDivider variant="accent" />
+
+      <Section variant="tinted" id="actives">
+        <SectionHeader index="02" eyebrow="Actives" title="Active Members" />
+        <div className="ktp-section-toolbar">
+          <p className="ktp-section-toolbar__text">
+            {members.length} active members across{' '}
+            {new Set(members.map((m) => m.pledgeClass)).size} pledge classes.
+          </p>
+          <input
+            type="search"
+            className="ktp-search ktp-search--inline"
+            placeholder="Search by name..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            aria-label="Search members by name"
+          />
         </div>
-      </div>
-
-      <div className="container pb-5">
-        <SliderCarousel />
-      </div>
-
-      <div className="container">
-      <div className="row px-3 px-md-0">
-        {CLASSES.map((pledgeClass, index) => (
-          <ClassDisplay pledgeClass={pledgeClass} key={index} />
-        ))}
+        <div className="ktp-people-grid ktp-people-grid--dense">
+          {filteredMembers.map((member, index) => (
+            <MemberCard key={`${member.name}-${index}`} member={member} />
+          ))}
         </div>
-      </div>
-        </PageTemplate>
+        {filteredMembers.length === 0 && search && (
+          <p style={{ color: 'var(--ktp-text-muted)' }}>No members found matching "{search}".</p>
+        )}
+      </Section>
+
+      <SectionDivider variant="line" />
+
+      <Section variant="alt" id="alumni">
+        <SectionHeader
+          index="03"
+          eyebrow="Network"
+          title="Alumni"
+          description="KTP has an extensive alumni network working at companies across the country."
+        />
+        <div className="ktp-logos" style={{ marginBottom: 'var(--space-2xl)' }}>
+          {COMPANY_LOGOS.map((company) => (
+            <img key={company.name} src={company.src} alt={company.name} loading="lazy" />
+          ))}
+        </div>
+        <div className="ktp-alumni-list">
+          {CLASSES.map((pledgeClass, index) => (
+            <ClassDisplay pledgeClass={pledgeClass} key={index} />
+          ))}
+        </div>
+      </Section>
+    </PageTemplate>
   );
 };
 

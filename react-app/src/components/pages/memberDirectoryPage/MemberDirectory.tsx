@@ -63,8 +63,8 @@ function MemberDirectory() {
      
     // Add a conditional statement to display the alumni database only if the user is authenticated
     return <PageTemplate page="member-directory">
-        <div className="container pt-5">
-        <h2 className="text-center mb-5">Member Directory</h2>
+        <div className="ktp-container ktp-portal-page">
+        <h2>Member Directory</h2>
         <p style={{ textAlign: 'center', paddingTop: 24 }}>Click <a href="https://docs.google.com/presentation/d/1Fsvg3E2xPiXjo9gYIZZWvQ4YqCVBxHipwugEOZGD4Pg/edit?fbclid=IwY2xjawJjnVBleHRuA2FlbQIxMAABHlkBMyHYiVbEtYu-vbp24StGGy1qMqBCm9XtL0gQUEX9NIb3gTM56mZnXu5R_aem_qtOaIKGfDDqJvHI7SkpS1A#slide=id.p">here</a> to learn more about brothers! </p>
         <MemberFilter
           onYearSelect={setSelectedYear}
@@ -92,7 +92,7 @@ function MemberDirectory() {
           </>
  : <>
           <h1>Access Denied</h1>
-          <p>Please <a style={{color: "blue", cursor:"pointer"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
+          <p>Please <button type="button" className="ktp-btn ktp-btn--secondary" onClick={handleLogin}>log in</button> to view the member directory.</p>
           </>
     }
          
