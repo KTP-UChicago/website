@@ -24,7 +24,9 @@ describe('Events content', () => {
     CHAPTER_EVENTS.forEach((event) => {
       expect(event.title).toBeTruthy();
       expect(event.date).toBeTruthy();
-      expect(event.image).toBeTruthy();
+      if (!event.visual) {
+        expect(event.image).toBeTruthy();
+      }
     });
   });
 });

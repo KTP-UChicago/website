@@ -8,7 +8,7 @@ import EventCard from '../../ui/EventCard';
 import RushCta from '../../ui/RushCta';
 import { HOME_HERO, HOME_PILLARS, HOME_SECTIONS } from '../../../content/homeContent';
 import { COMMUNITY_PHOTOS } from '../../../content/siteConfig';
-import { CHAPTER_EVENTS } from '../../../content/eventsContent';
+import { CHAPTER_EVENTS, EVENTS_UPCOMING_PHOTO } from '../../../content/eventsContent';
 import { COMPANY_LOGOS } from '../../../content/companies';
 import { buildSiteStats, SiteStat } from '../../../utils/statsUtils';
 
@@ -169,17 +169,32 @@ const HomePage = () => {
           title={HOME_SECTIONS.events.title}
           description={HOME_SECTIONS.events.description}
         />
-        <div className="ktp-home-events">
-          {upcomingEvents.map((event) => (
-            <EventCard key={event.id} {...event} variant="featured" />
-          ))}
-          <p className="ktp-events-upcoming__note">{HOME_SECTIONS.events.fallRushNote}</p>
+        <div
+          className={`ktp-home-events${
+            upcomingEvents.length === 0 ? ' ktp-home-events--split' : ''
+          }`}
+        >
+          <div className="ktp-home-events__copy">
+            <p className="ktp-events-upcoming__note">{HOME_SECTIONS.events.fallRushNote}</p>
+            {upcomingEvents.map((event) => (
+              <EventCard key={event.id} {...event} variant="featured" />
+            ))}
 
-          <div className="ktp-home-events__actions">
-            <Button variant="secondary" href="/events">
-              View all events
-            </Button>
+            <div className="ktp-home-events__actions">
+              <Button variant="secondary" href="/events">
+                View all events
+              </Button>
+            </div>
           </div>
+          {upcomingEvents.length === 0 && (
+            <figure className="ktp-events-upcoming__photo">
+              <img
+                src={EVENTS_UPCOMING_PHOTO.src}
+                alt={EVENTS_UPCOMING_PHOTO.alt}
+                loading="lazy"
+              />
+            </figure>
+          )}
         </div>
       </Section>
 

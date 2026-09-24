@@ -3,14 +3,23 @@ export const EVENTS_SECTIONS = {
     eyebrow: 'Upcoming',
     title: 'What\'s coming up',
     emptyMessage: '2026 Fall Rush events to be posted soon.',
-    fallRushNote: '2026 Fall Rush events to be posted soon.',
+    fallRushNote: 'Fall Rush is starting soon — events will be posted here as they\'re announced.',
   },
   past: {
     eyebrow: 'Archive',
     title: 'Past Programming — Unlock Your Tech Potential',
     description:
       'Workshops, panels, and recruiting events from the chapter’s professional development series.',
+    hackathons: {
+      eyebrow: 'Hackathons',
+      title: 'Campus hackathons',
+    },
   },
+} as const;
+
+export const EVENTS_UPCOMING_PHOTO = {
+  src: 'assets/img/community/lounge-social.jpg',
+  alt: 'KTP members connecting at a chapter social',
 } as const;
 
 export const EVENTS_FEATURE_PHOTOS = [
@@ -60,9 +69,8 @@ export const CHAPTER_EVENTS: ChapterEvent[] = [
     imageAlt: '',
     category: 'hackathon',
     season: 'Winter 2026',
-    isPast: false,
+    isPast: true,
     visual: 'hackathon',
-    registerUrl: 'https://uchicago-ktp-hackdays-2026.devpost.com',
   },
   {
     id: 'uytp-recruiting-2026',

@@ -1270,6 +1270,27 @@
   gap: var(--space-xl);
 }
 
+.ktp-home-events--split {
+  gap: 0;
+  overflow: hidden;
+  background: var(--ktp-surface);
+  border: 1px solid rgba(25, 68, 131, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 1.25rem 3rem rgba(25, 68, 131, 0.1);
+}
+
+@media (min-width: 768px) {
+  .ktp-home-events--split {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+  }
+}
+
+.ktp-home-events__copy {
+  display: grid;
+  gap: var(--space-lg);
+}
+
 .ktp-home-events__past-label {
   margin: 0;
   font-family: var(--font-display);
@@ -1287,6 +1308,64 @@
   gap: var(--space-lg);
 }
 
+.ktp-events-upcoming--split {
+  gap: 0;
+  overflow: hidden;
+  background: var(--ktp-surface);
+  border: 1px solid rgba(25, 68, 131, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 1.25rem 3rem rgba(25, 68, 131, 0.1);
+}
+
+@media (min-width: 768px) {
+  .ktp-events-upcoming--split {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+  }
+}
+
+.ktp-events-upcoming__copy {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.ktp-home-events--split .ktp-home-events__copy,
+.ktp-events-upcoming--split .ktp-events-upcoming__copy {
+  position: relative;
+  align-content: center;
+  padding: clamp(var(--space-xl), 5vw, var(--space-2xl));
+  background:
+    radial-gradient(circle at 10% 10%, rgba(111, 195, 129, 0.16), transparent 13rem),
+    linear-gradient(145deg, #f8fbff 0%, var(--ktp-tint-blue) 100%);
+}
+
+.ktp-home-events--split .ktp-home-events__copy::before,
+.ktp-events-upcoming--split .ktp-events-upcoming__copy::before {
+  content: 'FALL 2026 · RUSH';
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  background: var(--ktp-tint-green);
+  border-radius: 999px;
+  color: var(--ktp-dark-green);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ktp-events-upcoming__photo {
+  margin: 0;
+  overflow: hidden;
+}
+
+.ktp-events-upcoming__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  object-position: center;
+}
+
 .ktp-events-upcoming__note {
   margin: 0;
   padding: var(--space-md) var(--space-lg);
@@ -1297,11 +1376,49 @@
   font-size: 0.9375rem;
 }
 
-.ktp-event-card--featured {
+.ktp-home-events--split .ktp-events-upcoming__note,
+.ktp-events-upcoming--split .ktp-events-upcoming__note {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: var(--ktp-blue);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.ktp-events-upcoming__follow {
+  margin: 0;
+  color: var(--ktp-text-muted);
+  font-size: 0.9375rem;
+}
+
+.ktp-events-upcoming--split .ktp-events-upcoming__follow a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(25, 68, 131, 0.3);
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 767px) {
+  .ktp-events-upcoming__photo {
+    order: -1;
+  }
+
+  .ktp-events-upcoming__photo img {
+    min-height: 14rem;
+    max-height: 20rem;
+  }
+}
+
+.ktp-event-card.ktp-event-card--featured {
   display: grid;
+  padding: 0;
   overflow: hidden;
   background: var(--ktp-surface);
   border: 1px solid rgba(25, 68, 131, 0.08);
+  border-bottom: 1px solid rgba(25, 68, 131, 0.08);
   border-radius: 1rem;
   box-shadow: 0 1rem 2.5rem rgba(25, 68, 131, 0.08);
 }
@@ -1487,6 +1604,12 @@
 .ktp-past-events {
   display: grid;
   gap: var(--space-2xl);
+}
+
+.ktp-past-events__hackathons {
+  display: grid;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
 }
 
 .ktp-past-events__photos {

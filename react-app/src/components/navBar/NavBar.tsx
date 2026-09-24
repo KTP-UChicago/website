@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { PRIMARY_NAV, SITE } from '../../content/siteConfig';
-import { RUSH_CONFIG } from '../../content/rushContent';
 import { useAuthentication } from '../../contexts/AuthenticationContext';
 import { useScrollNav } from '../../hooks/useScrollNav/useScrollNav';
 import Button from '../ui/Button';
@@ -127,11 +126,7 @@ function NavBar({ page }: { page: string }) {
             >
               {user ? 'Sign Out' : 'Sign In'}
             </button>
-            <Button
-              variant={RUSH_CONFIG.status === 'open' ? 'primary' : 'secondary'}
-              href="/rush"
-              onClick={closeNav}
-            >
+            <Button variant="primary" href="/rush" onClick={closeNav}>
               Rush KTP
             </Button>
           </div>

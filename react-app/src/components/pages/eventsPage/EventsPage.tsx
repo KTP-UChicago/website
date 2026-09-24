@@ -8,11 +8,14 @@ import {
   CHAPTER_EVENTS,
   EVENTS_FEATURE_PHOTOS,
   EVENTS_SECTIONS,
+  EVENTS_UPCOMING_PHOTO,
 } from '../../../content/eventsContent';
 
 const EventsPage = () => {
   const upcoming = CHAPTER_EVENTS.filter((e) => !e.isPast);
   const past = CHAPTER_EVENTS.filter((e) => e.isPast);
+  const pastHackathons = past.filter((e) => e.category === 'hackathon');
+  const pastProgramming = past.filter((e) => e.category !== 'hackathon');
 
   return (
     <PageTemplate page="events">
@@ -29,37 +32,55 @@ const EventsPage = () => {
           eyebrow={EVENTS_SECTIONS.upcoming.eyebrow}
           title={EVENTS_SECTIONS.upcoming.title}
         />
-        {upcoming.length === 0 ? (
-          <div className="ktp-events-upcoming-placeholder">
-            <p>{EVENTS_SECTIONS.upcoming.emptyMessage}</p>
-            <p>
-              Follow us on{' '}
-              <a href="https://www.instagram.com/uchicagoktp" target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>{' '}
-              for updates.
-            </p>
+        <div
+          className={`ktp-events-upcoming${
+            upcoming.length === 0 ? ' ktp-events-upcoming--split' : ''
+          }`}
+        >
+          <div className="ktp-events-upcoming__copy">
+            <p className="ktp-events-upcoming__note">{EVENTS_SECTIONS.upcoming.fallRushNote}</p>
+            {upcoming.length > 0 &&
+              upcoming.map((event) => (
+                <EventCard key={event.id} {...event} season={event.season} variant="featured" />
+              ))}
+            {upcoming.length === 0 && (
+              <p className="ktp-events-upcoming__follow">
+                Follow us on{' '}
+                <a href="https://www.instagram.com/uchicagoktp" target="_blank" rel="noopener noreferrer">
+                  Instagram
+                </a>{' '}
+                for updates.
+              </p>
+            )}
           </div>
-        ) : (
-          <div className="ktp-events-upcoming">
-            {upcoming.map((event) => (
-              <EventCard key={event.id} {...event} season={event.season} variant="featured" />
-            ))}
-            <p className="ktp-events-upcoming__note">
-              {EVENTS_SECTIONS.upcoming.fallRushNote} Follow us on{' '}
-              <a href="https://www.instagram.com/uchicagoktp" target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>{' '}
-              for updates.
-            </p>
-          </div>
-        )}
+          {upcoming.length === 0 && (
+            <figure className="ktp-events-upcoming__photo">
+              <img
+                src={EVENTS_UPCOMING_PHOTO.src}
+                alt={EVENTS_UPCOMING_PHOTO.alt}
+                loading="lazy"
+              />
+            </figure>
+          )}
+        </div>
       </Section>
 
       {past.length > 0 && (
         <>
           <SectionDivider variant="accent" />
           <Section variant="tinted" className="ktp-section--past-events">
+            {pastHackathons.length > 0 && (
+              <div className="ktp-past-events__hackathons">
+                <SectionHeader
+                  eyebrow={EVENTS_SECTIONS.past.hackathons.eyebrow}
+                  title={EVENTS_SECTIONS.past.hackathons.title}
+                />
+                {pastHackathons.map((event) => (
+                  <EventCard key={event.id} {...event} season={event.season} variant="featured" />
+                ))}
+              </div>
+            )}
+
             <SectionHeader
               eyebrow={EVENTS_SECTIONS.past.eyebrow}
               title={EVENTS_SECTIONS.past.title}
@@ -76,7 +97,7 @@ const EventsPage = () => {
               </div>
 
               <div className="ktp-events-grid ktp-events-grid--past">
-                {past.map((event) => (
+                {pastProgramming.map((event) => (
                   <EventCard
                     key={event.id}
                     title={event.title}
