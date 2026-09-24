@@ -8,11 +8,9 @@ import {
   CHAPTER_EVENTS,
   EVENTS_FEATURE_PHOTOS,
   EVENTS_SECTIONS,
-  EVENTS_UPCOMING_PHOTO,
 } from '../../../content/eventsContent';
 
 const EventsPage = () => {
-  const upcoming = CHAPTER_EVENTS.filter((e) => !e.isPast);
   const past = CHAPTER_EVENTS.filter((e) => e.isPast);
   const pastHackathons = past.filter((e) => e.category === 'hackathon');
   const pastProgramming = past.filter((e) => e.category !== 'hackathon');
@@ -26,44 +24,6 @@ const EventsPage = () => {
           <p>Rush events, workshops, and professional programming from the chapter.</p>
         </div>
       </section>
-
-      <Section>
-        <SectionHeader
-          eyebrow={EVENTS_SECTIONS.upcoming.eyebrow}
-          title={EVENTS_SECTIONS.upcoming.title}
-        />
-        <div
-          className={`ktp-events-upcoming${
-            upcoming.length === 0 ? ' ktp-events-upcoming--split' : ''
-          }`}
-        >
-          <div className="ktp-events-upcoming__copy">
-            <p className="ktp-events-upcoming__note">{EVENTS_SECTIONS.upcoming.fallRushNote}</p>
-            {upcoming.length > 0 &&
-              upcoming.map((event) => (
-                <EventCard key={event.id} {...event} season={event.season} variant="featured" />
-              ))}
-            {upcoming.length === 0 && (
-              <p className="ktp-events-upcoming__follow">
-                Follow us on{' '}
-                <a href="https://www.instagram.com/uchicagoktp" target="_blank" rel="noopener noreferrer">
-                  Instagram
-                </a>{' '}
-                for updates.
-              </p>
-            )}
-          </div>
-          {upcoming.length === 0 && (
-            <figure className="ktp-events-upcoming__photo">
-              <img
-                src={EVENTS_UPCOMING_PHOTO.src}
-                alt={EVENTS_UPCOMING_PHOTO.alt}
-                loading="lazy"
-              />
-            </figure>
-          )}
-        </div>
-      </Section>
 
       {past.length > 0 && (
         <>

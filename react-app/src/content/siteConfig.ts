@@ -1,5 +1,5 @@
 /** TODO: replace with verified count when major data is available */
-export const MAJORS_COUNT_PLACEHOLDER = 30;
+export const MAJORS_COUNT_PLACEHOLDER = '16+';
 
 export const SITE = {
   name: 'Kappa Theta Pi',
@@ -95,7 +95,7 @@ export const COMMUNITY_PHOTOS = {
   mosaic: [
     { src: 'assets/img/community/ice-skating.jpg', alt: 'KTP members ice skating together' },
     { src: 'assets/img/community/dj-social.jpg', alt: 'KTP social gathering with DJ setup' },
-    { src: 'assets/img/community/lounge-social.jpg', alt: 'KTP members relaxing together' },
+    { src: 'assets/img/community/chapter-dinner.jpg', alt: 'KTP members sharing dinner together' },
     { src: 'assets/img/community/ice-skating-fun.jpg', alt: 'KTP members at the ice rink' },
     { src: 'assets/img/community/formal-group.jpg', alt: 'KTP members at a formal event' },
   ],

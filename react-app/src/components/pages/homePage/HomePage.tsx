@@ -179,12 +179,6 @@ const HomePage = () => {
             {upcomingEvents.map((event) => (
               <EventCard key={event.id} {...event} variant="featured" />
             ))}
-
-            <div className="ktp-home-events__actions">
-              <Button variant="secondary" href="/events">
-                View all events
-              </Button>
-            </div>
           </div>
           {upcomingEvents.length === 0 && (
             <figure className="ktp-events-upcoming__photo">
