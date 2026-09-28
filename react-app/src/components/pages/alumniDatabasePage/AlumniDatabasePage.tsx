@@ -24,8 +24,8 @@ function AlumniDatabasePage() {
 
     // Add a conditional statement to display the alumni database only if the user is authenticated
     return <PageTemplate page="alumni-database">
-        <div className="container pt-5">
-        <h2 className="text-center mb-5">Alumni Database</h2>
+        <div className="ktp-container ktp-portal-page">
+        <h2>Alumni Database</h2>
         {user ? 
           <Container>
           <Grid container spacing={4}>
@@ -47,7 +47,7 @@ function AlumniDatabasePage() {
           </Grid>
           </Container> : <>
           <h1>Access Denied</h1>
-          <p>Please <a style={{color: "blue", cursor:"pointer"}} onClick={handleLogin}>log in</a> to view the alumni database.</p>
+          <p>Please <button type="button" className="ktp-btn ktp-btn--secondary" onClick={handleLogin}>log in</button> to view the alumni database.</p>
           </>
     }
          

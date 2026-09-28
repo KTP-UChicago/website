@@ -1,9 +1,21 @@
 .courses {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    gap: 16px; 
-    padding: 16px; 
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 0;
     align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+    .courses {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .courses {
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+    }
 }
 
 .filter-bar {

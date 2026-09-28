@@ -1,22 +1,21 @@
-import React from 'react'
+import React from 'react';
 
 interface ClassInfo {
-    name: string, 
-    members: string[]
+  name: string;
+  members: string[];
 }
 
-function ClassDisplay({pledgeClass}: {pledgeClass: ClassInfo}) {
-  return  <><div className="col-lg-2 col-md-6">
-            <h2>{pledgeClass.name}</h2>
-          </div>
-          <div className="col-lg-2 col-md-6">
-            <p>
-                {pledgeClass.members.map((member) => (
-                    <>{member}<br /></>
-                ))}
-            </p>
+function ClassDisplay({ pledgeClass }: { pledgeClass: ClassInfo }) {
+  return (
+    <div className="ktp-alumni-class">
+      <h3 className="ktp-alumni-class__title">{pledgeClass.name}</h3>
+      <ul className="ktp-alumni-class__members">
+        {pledgeClass.members.map((member) => (
+          <li key={member}>{member}</li>
+        ))}
+      </ul>
     </div>
-    </>
+  );
 }
 
-export default ClassDisplay
+export default ClassDisplay;

@@ -1,43 +1,106 @@
-import React from 'react'
-import PageTemplate from '../../core/pageTemplate/PageTemplate'
+import React from 'react';
+import PageTemplate from '../../core/pageTemplate/PageTemplate';
+import Section from '../../ui/Section';
+import SectionDivider from '../../ui/SectionDivider';
+import { SITE } from '../../../content/siteConfig';
 
 function ContactPage() {
-  return <PageTemplate page="contact">
-    <div className="container pt-5">
-      <div className="row px-3 px-md-0">
-        <img src="assets/img/contact/bigfam.jpg" className="img-fluid col-lg-6" alt="Big Family" />
-        <div className="col-lg-6 pt-4 pt-lg-0">
-          <h2 className="text-center mb-4">Students</h2>
-          <p>
-            If you would like more information or have questions about rush, please contact us at
-            <a href="mailto:uchicagoktp@gmail.com" target="_blank" rel="noopener noreferrer">uchicagoktp@gmail.com</a>.
-            Additionally, follow our
-            <a href="https://www.facebook.com/uchicagoktp" target="_blank" rel="noopener noreferrer">Facebook</a>
-            page to stay up-to-date on rush events! We typically rush during Fall and Spring
-            quarters.
-          </p>
+  return (
+    <PageTemplate page="contact">
+      <Section>
+        <div className="ktp-split">
+          <div>
+            <p className="ktp-eyebrow">Get in touch</p>
+            <h1>Contact KTP</h1>
+            <p>
+              Whether you're interested in rushing, partnering with us, or just saying hello — we'd
+              love to hear from you.
+            </p>
+            <div className="ktp-contact-links" aria-label="Contact links">
+              <a className="ktp-contact-link" href={`mailto:${SITE.email}`}>
+                <span className="ktp-contact-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M3 6.5h18v11H3z" />
+                    <path d="m3.5 7 8.5 6 8.5-6" />
+                  </svg>
+                </span>
+                <span className="ktp-contact-link__content">
+                  <span className="ktp-contact-link__label">Email</span>
+                  <span className="ktp-contact-link__value">{SITE.email}</span>
+                </span>
+              </a>
+              <a
+                className="ktp-contact-link"
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="ktp-contact-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                </span>
+                <span className="ktp-contact-link__content">
+                  <span className="ktp-contact-link__label">Instagram</span>
+                  <span className="ktp-contact-link__value">@uchicagoktp</span>
+                </span>
+              </a>
+              <a
+                className="ktp-contact-link"
+                href={SITE.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="ktp-contact-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.7 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.5 1.6-1.5H17V4a22 22 0 0 0-2.4-.1c-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.5v8h3.2Z" />
+                  </svg>
+                </span>
+                <span className="ktp-contact-link__content">
+                  <span className="ktp-contact-link__label">Facebook</span>
+                  <span className="ktp-contact-link__value">KTP at UChicago</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="ktp-split__image">
+            <img
+              src="assets/img/contact/paddle-night.jpg"
+              alt="KTP members painting paddles together"
+            />
+          </div>
         </div>
-      </div>
-      <div className="row mt-3 mt-lg-4 pt-lg-5 px-3 px-md-0">
-        <img
-          src="assets/img/contact/walk.jpg"
-          className="img-fluid col-lg-6 order-1 order-lg-2"
-          alt="Walk"
-        />
-        <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
-          <h2 className="text-center mb-4">Companies</h2>
-          <p>
-            We are always looking to work with companies to put up recruitment events on campus such
-            as tech talks, information sessions, and networking sessions. Recruitment events help
-            create relationships between students and recruiters in a smaller, more relaxed setting.
-            For companies interested in hosting an event with us or would like more information,
-            please contact us at
-            <a href="mailto:uchicagoktp@gmail.com" target="_blank" rel="noopener noreferrer">uchicagoktp@gmail.com</a>.
-          </p>
+      </Section>
+
+      <SectionDivider variant="accent" />
+
+      <Section variant="tinted">
+        <div className="ktp-contact-panels">
+          <div className="ktp-contact-panel">
+            <h3>Students</h3>
+            <p>
+              Questions about rush? Email us at{' '}
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Follow our{' '}
+              <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>{' '}
+              to stay up to date on rush events.
+            </p>
+          </div>
+          <div className="ktp-contact-panel">
+            <h3>Companies & partners</h3>
+            <p>
+              We partner with companies for tech talks, information sessions, and networking events
+              on campus. Contact us at{' '}
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      </Section>
     </PageTemplate>
+  );
 }
 
-export default ContactPage
+export default ContactPage;
