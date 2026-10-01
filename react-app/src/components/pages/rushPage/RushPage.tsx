@@ -30,10 +30,33 @@ const HERO_WAVES = (
 
 const RushPage = () => {
   useNavigateToId();
-  const { status, season, applyUrl, applicationCtaLabel, heroImage, heroImageAlt, contacts } =
-    RUSH_CONFIG;
+  const {
+    status,
+    season,
+    applyUrl,
+    interestUrl,
+    applicationCtaLabel,
+    interestCtaLabel,
+    heroImage,
+    heroImageAlt,
+    contacts,
+  } = RUSH_CONFIG;
   const { hero, sections, cta } = RUSH_THEME;
   const applicationsOpen = status === 'open' && applyUrl;
+  const collectingInterest = status === 'interest' && interestUrl;
+
+  const renderRushAction = () =>
+    applicationsOpen ? (
+      <Button variant="primary" href={applyUrl} external>
+        Apply Now
+      </Button>
+    ) : collectingInterest ? (
+      <Button variant="primary" href={interestUrl} external>
+        {interestCtaLabel}
+      </Button>
+    ) : (
+      <span className="ktp-btn ktp-btn--primary ktp-btn--disabled">{applicationCtaLabel}</span>
+    );
 
   return (
     <PageTemplate page="rush">
@@ -44,17 +67,7 @@ const RushPage = () => {
               <p className="ktp-eyebrow">{hero.eyebrow(season)}</p>
               <h1>{hero.headline}</h1>
               <p>{hero.subheadline}</p>
-              <div className="ktp-btn-group ktp-rush-hero__actions">
-                {applicationsOpen ? (
-                  <Button variant="primary" href={applyUrl} external>
-                    Apply Now
-                  </Button>
-                ) : (
-                  <span className="ktp-btn ktp-btn--primary ktp-btn--disabled">
-                    {applicationCtaLabel}
-                  </span>
-                )}
-              </div>
+              <div className="ktp-btn-group ktp-rush-hero__actions">{renderRushAction()}</div>
             </div>
             <figure className="ktp-rush-hero__photo">
               <img src={heroImage} alt={heroImageAlt} loading="eager" />
@@ -126,17 +139,7 @@ const RushPage = () => {
               <h2>{cta.headline}</h2>
               <p>{cta.subheadline(season)}</p>
             </div>
-            <div className="ktp-rush-embark__actions">
-              {applicationsOpen ? (
-                <Button variant="primary" href={applyUrl} external>
-                  Apply Now
-                </Button>
-              ) : (
-                <span className="ktp-btn ktp-btn--primary ktp-btn--disabled">
-                  {applicationCtaLabel}
-                </span>
-              )}
-            </div>
+            <div className="ktp-rush-embark__actions">{renderRushAction()}</div>
           </div>
         </Section>
       </div>

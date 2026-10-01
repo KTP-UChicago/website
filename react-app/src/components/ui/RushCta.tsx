@@ -4,7 +4,7 @@ import { HOME_SECTIONS } from '../../content/homeContent';
 import Button from './Button';
 
 const RushCta: React.FC = () => {
-  const { status, applyUrl, interestUrl } = RUSH_CONFIG;
+  const { status, applyUrl, interestUrl, interestCtaLabel } = RUSH_CONFIG;
   const { title, description, learnLabel, applyLabel } = HOME_SECTIONS.rushCta;
 
   return (
@@ -32,7 +32,7 @@ const RushCta: React.FC = () => {
           )}
           {status === 'interest' && interestUrl && (
             <Button variant="primary" href={interestUrl} external>
-              Interest Form <span aria-hidden="true">↗</span>
+              {interestCtaLabel} <span aria-hidden="true">↗</span>
             </Button>
           )}
         </div>

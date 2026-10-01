@@ -1,12 +1,13 @@
 export type RushStatus = 'open' | 'interest' | 'closed';
 
 export const RUSH_CONFIG = {
-  status: 'closed' as RushStatus,
+  status: 'interest' as RushStatus,
   season: 'Fall 2026',
   applicationCtaLabel: 'Application coming soon',
+  interestCtaLabel: 'Fill out our Rush Interest Form!',
   applyUrl:
     'https://docs.google.com/forms/d/e/1FAIpQLSfyivhHCBm7Ppl6CdYoArWzMlOzOGtbwJRfyHVYugVPuQ1svQ/viewform',
-  interestUrl: undefined as string | undefined,
+  interestUrl: 'https://forms.gle/WV9BHBYed53Y7NAv6',
   heroImage: 'assets/img/rush/group-social.png',
   heroImageAlt: 'KTP members celebrating together at a social event',
   contacts: [
@@ -37,7 +38,7 @@ export const RUSH_THEME = {
   cta: {
     headline: 'Ready to embark?',
     subheadline: (season: string) =>
-      `Applications for ${season} will be posted soon. Check back for updates.`,
+      `Fill out our Rush Interest Form! ${season} applications are due Thursday, October 8 at midnight.`,
   },
 } as const;
 
@@ -112,10 +113,10 @@ export const RUSH_EVENTS: RushEvent[] = [
     title: 'Applications Due',
     tagline: 'Submit before you set sail',
     description:
-      'Submit your rush application by the deadline to be considered for membership.',
-    date: 'TBD',
-    time: 'TBD',
-    location: 'TBD',
+      'Submit your rush application by midnight to be considered for membership.',
+    date: 'Thursday, October 8',
+    time: 'Midnight',
+    location: 'Online',
     image: 'assets/img/community/lounge-social.jpg',
     imageAlt: 'KTP rush applications',
   },

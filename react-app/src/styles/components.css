@@ -574,7 +574,7 @@
   --hero-stats-offset: 100%;
   --hero-stats-opacity: 0;
   position: relative;
-  height: 200vh;
+  height: 128vh;
 }
 
 .ktp-hero-reveal__stage {
@@ -739,6 +739,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 1.25rem;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

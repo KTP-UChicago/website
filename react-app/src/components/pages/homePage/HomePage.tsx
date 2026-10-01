@@ -37,10 +37,10 @@ const HomePage = () => {
 
     let frame = 0;
     const updateReveal = () => {
-      const scrollDistance = Math.max(window.innerHeight, 1);
+      const scrollDistance = Math.max(reveal.offsetHeight - window.innerHeight, 1);
       const progress = Math.min(1, Math.max(0, -reveal.getBoundingClientRect().top / scrollDistance));
-      const statsProgress = Math.min(1, Math.max(0, (progress - 0.08) / 0.18));
-      reveal.style.setProperty('--hero-position', `${progress * 100}%`);
+      const statsProgress = Math.min(1, Math.max(0, (progress - 0.02) / 0.9));
+      reveal.style.setProperty('--hero-position', `${progress * 42}%`);
       reveal.style.setProperty('--hero-stats-offset', `${(1 - statsProgress) * 100}%`);
       reveal.style.setProperty('--hero-stats-opacity', `${statsProgress}`);
       frame = 0;
@@ -81,7 +81,17 @@ const HomePage = () => {
                 <h1>{HOME_HERO.headline}</h1>
                 <p className="ktp-hero-immersive__sub">{HOME_HERO.subheadline}</p>
                 <div className="ktp-btn-group ktp-hero-immersive__actions">
-                  <a className="ktp-scroll-cue" href="#why-ktp">
+                  <a
+                    className="ktp-scroll-cue"
+                    href="#why-ktp"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                      document.getElementById('why-ktp')?.scrollIntoView({
+                        behavior: reduceMotion ? 'auto' : 'smooth',
+                      });
+                    }}
+                  >
                     <span>Scroll down</span>
                     <span className="ktp-scroll-cue__arrow" aria-hidden="true">↓</span>
                   </a>

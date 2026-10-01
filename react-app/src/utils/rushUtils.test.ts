@@ -11,6 +11,12 @@ describe('Rush configuration', () => {
       expect(RUSH_CONFIG.applyUrl).toBeTruthy();
     }
   });
+
+  it('has an interest form when status is interest', () => {
+    if (RUSH_CONFIG.status === 'interest') {
+      expect(RUSH_CONFIG.interestUrl).toBe('https://forms.gle/WV9BHBYed53Y7NAv6');
+    }
+  });
 });
 
 describe('Events content', () => {
