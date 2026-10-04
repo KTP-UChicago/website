@@ -109,6 +109,13 @@ const RushPage = () => {
                     {event.date} · {event.time} · {event.location}
                   </p>
                   <p className="ktp-timeline__description">{event.description}</p>
+                  {event.actionLabel && applyUrl && (
+                    <div className="ktp-timeline__action">
+                      <Button variant="primary" href={applyUrl} external>
+                        {event.actionLabel}
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

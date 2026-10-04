@@ -1,12 +1,12 @@
 export type RushStatus = 'open' | 'interest' | 'closed';
 
 export const RUSH_CONFIG = {
-  status: 'interest' as RushStatus,
+  status: 'open' as RushStatus,
   season: 'Fall 2026',
   applicationCtaLabel: 'Application coming soon',
   interestCtaLabel: 'Fill out our Rush Interest Form!',
   applyUrl:
-    'https://docs.google.com/forms/d/e/1FAIpQLSfyivhHCBm7Ppl6CdYoArWzMlOzOGtbwJRfyHVYugVPuQ1svQ/viewform',
+    'https://docs.google.com/forms/d/e/1FAIpQLSejfwzl753VBV7ix29tKDBXqCT8YGi22Fy_wM7Kb4mYDO19Eg/viewform',
   interestUrl: 'https://forms.gle/WV9BHBYed53Y7NAv6',
   heroImage: 'assets/img/rush/group-social.png',
   heroImageAlt: 'KTP members celebrating together at a social event',
@@ -38,7 +38,7 @@ export const RUSH_THEME = {
   cta: {
     headline: 'Ready to embark?',
     subheadline: (season: string) =>
-      `Fill out our Rush Interest Form! ${season} applications are due Thursday, October 8 at midnight.`,
+      `${season} applications are due Thursday, October 8 at midnight.`,
   },
 } as const;
 
@@ -53,13 +53,13 @@ export type RushEvent = {
   image: string;
   imageAlt: string;
   required?: 'info' | 'additional';
+  actionLabel?: string;
 };
 
 export const RUSH_EVENTS: RushEvent[] = [
   {
     id: 'info-1',
     title: 'Info Session 1',
-    tagline: 'Drop anchor and learn the basics',
     description:
       "Learn the basics about KTP, meet members, and decide if our community is one you'd like to join. All rushees must attend one info session.",
     date: 'Monday, October 5',
@@ -72,7 +72,6 @@ export const RUSH_EVENTS: RushEvent[] = [
   {
     id: 'info-2',
     title: 'Info Session 2',
-    tagline: 'Drop anchor and learn the basics',
     description:
       'A second opportunity to learn about KTP and meet the chapter. All rushees must attend one info session.',
     date: 'Tuesday, October 6',
@@ -83,16 +82,16 @@ export const RUSH_EVENTS: RushEvent[] = [
     required: 'info',
   },
   {
-    id: 'theme-event',
-    title: 'Theme Event',
+    id: 'speed-dating',
+    title: 'Speed Dating',
     tagline: 'Connect with the chapter',
     description:
-      'Connect with KTP members and fellow rushees at our theme event.',
+      'Connect with KTP members and fellow rushees at speed dating.',
     date: 'Wednesday, October 7',
     time: '8:00–10:00 PM',
     location: 'Reynolds Club — Hutchinson Commons',
     image: 'assets/img/community/dj-social.jpg',
-    imageAlt: 'KTP members at a rush theme event',
+    imageAlt: 'KTP members at rush speed dating',
     required: 'additional',
   },
   {
@@ -114,6 +113,7 @@ export const RUSH_EVENTS: RushEvent[] = [
     tagline: 'Submit before you set sail',
     description:
       'Submit your rush application by midnight to be considered for membership.',
+    actionLabel: 'Apply',
     date: 'Thursday, October 8',
     time: 'Midnight',
     location: 'Online',

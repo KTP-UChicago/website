@@ -3272,6 +3272,10 @@
   color: var(--ktp-text-muted);
 }
 
+.ktp-rush-page .ktp-timeline__action {
+  margin-top: var(--space-md);
+}
+
 @media (max-width: 767px) {
   .ktp-timeline--alternating::before {
     left: 0.5rem;

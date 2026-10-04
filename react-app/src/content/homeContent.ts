@@ -44,7 +44,9 @@ export const HOME_SECTIONS = {
     eyebrow: 'Programming',
     title: 'What\'s coming up',
     description: 'Hackathons, rush events, and professional programming from the chapter.',
-    fallRushNote: 'Fall Rush is starting soon — events will be posted on the website.',
+    fallRushNote: 'Fall Rush is open. See the schedule and apply by Thursday, October 8.',
+    rushPageLabel: 'Rush page',
+    applyLabel: 'Apply',
   },
   people: {
     eyebrow: 'The chapter',

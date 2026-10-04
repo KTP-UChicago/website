@@ -7,6 +7,7 @@ import Button from '../../ui/Button';
 import EventCard from '../../ui/EventCard';
 import RushCta from '../../ui/RushCta';
 import { HOME_HERO, HOME_PILLARS, HOME_SECTIONS } from '../../../content/homeContent';
+import { RUSH_CONFIG } from '../../../content/rushContent';
 import { COMMUNITY_PHOTOS } from '../../../content/siteConfig';
 import { CHAPTER_EVENTS, EVENTS_UPCOMING_PHOTO } from '../../../content/eventsContent';
 import { COMPANY_LOGOS } from '../../../content/companies';
@@ -186,6 +187,14 @@ const HomePage = () => {
         >
           <div className="ktp-home-events__copy">
             <p className="ktp-events-upcoming__note">{HOME_SECTIONS.events.fallRushNote}</p>
+            <div className="ktp-btn-group">
+              <Button variant="secondary" href="/rush">
+                {HOME_SECTIONS.events.rushPageLabel}
+              </Button>
+              <Button variant="primary" href={RUSH_CONFIG.applyUrl} external>
+                {HOME_SECTIONS.events.applyLabel}
+              </Button>
+            </div>
             {upcomingEvents.map((event) => (
               <EventCard key={event.id} {...event} variant="featured" />
             ))}
